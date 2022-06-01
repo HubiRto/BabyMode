@@ -1,6 +1,8 @@
 name: BabyMode
 version: '${project.version}'
-main: pl.pomoku.babymode.BabyMode
+main: pl.pomoku.babymode.Main
 api-version: 1.18
 authors: [ HubiRto ]
 description: Plugin na latwiejsza rozgrywke
+commands:
+    babymode:
