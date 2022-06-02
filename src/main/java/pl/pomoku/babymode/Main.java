@@ -21,5 +21,11 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnMove(this), this);
         getServer().getPluginManager().registerEvents(new OnPlayerDamage(this), this);
         getServer().getPluginManager().registerEvents(new EntitiDamage(this), this);
+        getServer().getPluginManager().registerEvents(new DiamondDrop(this), this);
+        getServer().getPluginManager().registerEvents(new KillMobs(this), this);
+        getServer().getPluginManager().registerEvents(new EntitiExplodeEvent(this), this);
+        getServer().getPluginManager().registerEvents(new BlockEndermanEvent(this), this);
+        getServer().getPluginManager().registerEvents(new EntityDropItem(this), this);
+        getServer().getPluginManager().registerEvents(new EntitiDiead(this), this);
     }
 }
