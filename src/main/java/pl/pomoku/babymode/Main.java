@@ -27,5 +27,6 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlokowanieEndermanow(this), this);
         getServer().getPluginManager().registerEvents(new ZwiekszanieDropuZMobow(this), this);
         getServer().getPluginManager().registerEvents(new WejscieDoNetheru(this), this);
+        getServer().getPluginManager().registerEvents(new ZabijanieWithera(this), this);
     }
 }
