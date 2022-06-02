@@ -6,9 +6,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTeleportEvent;
 import pl.pomoku.babymode.Main;
 
-public class BlockEndermanEvent implements Listener {
+public class BlokowanieEndermanow implements Listener {
     Main plugin;
-    public BlockEndermanEvent(Main m){
+    public BlokowanieEndermanow(Main m){
         plugin = m;
     }
     @EventHandler

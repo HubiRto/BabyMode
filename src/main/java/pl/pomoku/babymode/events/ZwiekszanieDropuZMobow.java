@@ -8,9 +8,9 @@ import pl.pomoku.babymode.Main;
 
 import java.util.List;
 
-public class EntitiDiead implements Listener {
+public class ZwiekszanieDropuZMobow implements Listener {
     Main plugin;
-    public EntitiDiead(Main m){
+    public ZwiekszanieDropuZMobow(Main m){
         plugin = m;
     }
     @EventHandler

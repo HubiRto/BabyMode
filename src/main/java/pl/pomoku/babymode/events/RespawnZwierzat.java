@@ -6,9 +6,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import pl.pomoku.babymode.Main;
 
-public class AnimalsDeadEvent implements Listener {
+public class RespawnZwierzat implements Listener {
     Main plugin;
-    public AnimalsDeadEvent(Main m){
+    public RespawnZwierzat(Main m){
         plugin = m;
     }
     @EventHandler

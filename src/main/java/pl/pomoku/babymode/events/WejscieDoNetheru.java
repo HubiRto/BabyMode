@@ -1,0 +1,31 @@
+package pl.pomoku.babymode.events;
+
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
+import org.bukkit.inventory.ItemStack;
+import pl.pomoku.babymode.Main;
+
+public class WejscieDoNetheru implements Listener {
+    Main plugin;
+    public WejscieDoNetheru(Main m){
+        plugin = m;
+    }
+    @EventHandler
+    public void PlayerChangedWorldEvent(PlayerChangedWorldEvent e){
+        Player p = e.getPlayer();
+        if(plugin.getConfig().getBoolean(p.getDisplayName() + ".babymode")) {
+            if (p.getWorld().getName().equals("world_nether")) {
+                if (!p.hasPlayedBefore()) {
+                    p.sendMessage(ChatColor.WHITE + "<" + ChatColor.GOLD + "GOD" + ChatColor.WHITE + ">" + ChatColor.GRAY + "Dalem ci maly upominek, zeby nie musial/a sie meczyc!");
+                    p.getInventory().addItem(new ItemStack(Material.ENDER_EYE, 16));
+                    p.getInventory().addItem(new ItemStack(Material.ENDER_PEARL, 16));
+                    p.getInventory().addItem(new ItemStack(Material.BLAZE_ROD, 16));
+                }
+            }
+        }
+    }
+}

@@ -4,19 +4,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.block.data.Levelled;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 import pl.pomoku.babymode.Main;
 
-public class OnPlayerDamage implements Listener {
+public class GaszenieGraczaGdySiePali implements Listener {
     Main plugin;
-    public OnPlayerDamage(Main m){
+    public GaszenieGraczaGdySiePali(Main m){
         plugin = m;
     }
 

@@ -17,15 +17,15 @@ public final class Main extends JavaPlugin {
         saveConfig();
 
         getServer().getPluginManager().registerEvents(new OnJoin(this), this);
-        getServer().getPluginManager().registerEvents(new AnimalsDeadEvent(this), this);
-        getServer().getPluginManager().registerEvents(new OnMove(this), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerDamage(this), this);
-        getServer().getPluginManager().registerEvents(new EntitiDamage(this), this);
-        getServer().getPluginManager().registerEvents(new DiamondDrop(this), this);
-        getServer().getPluginManager().registerEvents(new KillMobs(this), this);
-        getServer().getPluginManager().registerEvents(new EntitiExplodeEvent(this), this);
-        getServer().getPluginManager().registerEvents(new BlockEndermanEvent(this), this);
-        getServer().getPluginManager().registerEvents(new EntityDropItem(this), this);
-        getServer().getPluginManager().registerEvents(new EntitiDiead(this), this);
+        getServer().getPluginManager().registerEvents(new RespawnZwierzat(this), this);
+        getServer().getPluginManager().registerEvents(new TworzenieObsydianuZamiastLava(this), this);
+        getServer().getPluginManager().registerEvents(new GaszenieGraczaGdySiePali(this), this);
+        getServer().getPluginManager().registerEvents(new PodpalanieZwierzat(this), this);
+        getServer().getPluginManager().registerEvents(new TworzeniePortalu(this), this);
+        getServer().getPluginManager().registerEvents(new ZabijaniePotworow(this), this);
+        getServer().getPluginManager().registerEvents(new BlokowanieWybuchuCreepera(this), this);
+        getServer().getPluginManager().registerEvents(new BlokowanieEndermanow(this), this);
+        getServer().getPluginManager().registerEvents(new ZwiekszanieDropuZMobow(this), this);
+        getServer().getPluginManager().registerEvents(new WejscieDoNetheru(this), this);
     }
 }

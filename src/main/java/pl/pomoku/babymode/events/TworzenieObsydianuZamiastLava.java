@@ -11,10 +11,10 @@ import pl.pomoku.babymode.Main;
 
 
 
-public class OnMove implements Listener {
+public class TworzenieObsydianuZamiastLava implements Listener {
 
     Main plugin;
-    public OnMove(Main m){
+    public TworzenieObsydianuZamiastLava(Main m){
         plugin = m;
     }
 

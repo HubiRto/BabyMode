@@ -6,9 +6,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import pl.pomoku.babymode.Main;
 
-public class KillMobs implements Listener {
+public class ZabijaniePotworow implements Listener {
     Main plugin;
-    public KillMobs(Main m){
+    public ZabijaniePotworow(Main m){
         plugin = m;
     }
     @EventHandler

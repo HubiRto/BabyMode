@@ -1,17 +1,15 @@
 package pl.pomoku.babymode.events;
 
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
 import pl.pomoku.babymode.Main;
 
-public class EntitiDamage implements Listener {
+public class PodpalanieZwierzat implements Listener {
     Main plugin;
-    public EntitiDamage(Main m){
+    public PodpalanieZwierzat(Main m){
         plugin = m;
     }
     @EventHandler
