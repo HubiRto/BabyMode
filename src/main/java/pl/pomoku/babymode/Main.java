@@ -16,6 +16,7 @@ import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnNether;
 import pl.pomoku.babymode.events.PlayerJoinEvent.OnJoin;
 import pl.pomoku.babymode.events.PlayerMoveEvent.CreatingObsidianInsteadOfLava;
 import pl.pomoku.babymode.events.PrepareItemCraftEvent.CraftEvent;
+import pl.pomoku.babymode.events.PrepareSmithingEvent.AutoEnchantUpgradeItems;
 
 public final class Main extends JavaPlugin {
 
@@ -43,5 +44,6 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinOnNether(this), this);
         getServer().getPluginManager().registerEvents(new CraftEvent(this), this);
         getServer().getPluginManager().registerEvents(new BlockItemsBurning(this), this);
+        getServer().getPluginManager().registerEvents(new AutoEnchantUpgradeItems(this), this);
     }
 }
