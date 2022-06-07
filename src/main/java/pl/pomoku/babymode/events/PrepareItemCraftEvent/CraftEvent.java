@@ -68,6 +68,18 @@ public class CraftEvent implements Listener {
         gold_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
         gold_sword.setItemMeta(gold_sword_meta);
 
+        ItemStack diamond_sword = new ItemStack(Material.DIAMOND_SWORD);
+        ItemMeta diamond_sword_meta = diamond_sword.getItemMeta();
+        diamond_sword_meta.addEnchant(Enchantment.FIRE_ASPECT, 2, true);
+        diamond_sword_meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+        diamond_sword_meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 5, true);
+        diamond_sword_meta.addEnchant(Enchantment.DAMAGE_ARTHROPODS, 5, true);
+        diamond_sword_meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 3, true);
+        diamond_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
+        diamond_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        diamond_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        diamond_sword.setItemMeta(diamond_sword_meta);
+
         if(e.getRecipe() != null && e.getInventory().getResult() != null) {
             if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_SWORD) {
                 e.getInventory().setResult(wooden_sword);
@@ -77,6 +89,8 @@ public class CraftEvent implements Listener {
                 e.getInventory().setResult(iron_sword);
             }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.GOLDEN_SWORD) {
                 e.getInventory().setResult(gold_sword);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.DIAMOND_SWORD) {
+                e.getInventory().setResult(diamond_sword);
             }
         }
     }
