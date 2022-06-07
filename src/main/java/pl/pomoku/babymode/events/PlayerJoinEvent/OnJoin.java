@@ -1,6 +1,5 @@
-package pl.pomoku.babymode.events;
+package pl.pomoku.babymode.events.PlayerJoinEvent;
 
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -14,8 +13,8 @@ public class OnJoin implements Listener {
     }
     @EventHandler
     public void OnJoin(PlayerJoinEvent e){
-        Player p = e.getPlayer();
-        plugin.getConfig().set(p.getDisplayName() + ".babymode", false);
+        plugin.getConfig().set("babymode", false);
+        plugin.getConfig().set("kill_mobs", false);
         plugin.saveConfig();
     }
 }

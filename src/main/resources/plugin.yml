@@ -6,3 +6,5 @@ authors: [ HubiRto ]
 description: Plugin na latwiejsza rozgrywke
 commands:
     babymode:
+        aliases:
+            - 'bm'

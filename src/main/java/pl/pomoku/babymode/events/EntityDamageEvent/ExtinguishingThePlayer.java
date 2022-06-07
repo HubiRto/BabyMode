@@ -1,4 +1,4 @@
-package pl.pomoku.babymode.events;
+package pl.pomoku.babymode.events.EntityDamageEvent;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -10,9 +10,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import pl.pomoku.babymode.Main;
 
-public class GaszenieGraczaGdySiePali implements Listener {
+public class ExtinguishingThePlayer implements Listener {
     Main plugin;
-    public GaszenieGraczaGdySiePali(Main m){
+    public ExtinguishingThePlayer(Main m){
         plugin = m;
     }
 
@@ -20,7 +20,7 @@ public class GaszenieGraczaGdySiePali implements Listener {
     public void onPlayerDamage(EntityDamageEvent e) {
         if (e.getEntity() instanceof Player) {
             Player p = ((Player) e.getEntity()).getPlayer();
-            if(plugin.getConfig().getBoolean(p.getDisplayName() + ".babymode")) {
+            if(plugin.getConfig().getBoolean("babymode")) {
                 e.setCancelled(true);
                 if (e.getCause().equals(EntityDamageEvent.DamageCause.FIRE_TICK)) {
                     Location loc = p.getLocation();
