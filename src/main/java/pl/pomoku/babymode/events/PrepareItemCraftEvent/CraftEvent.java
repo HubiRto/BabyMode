@@ -44,11 +44,39 @@ public class CraftEvent implements Listener {
         stone_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
         stone_sword.setItemMeta(stone_sword_meta);
 
+        ItemStack iron_sword = new ItemStack(Material.IRON_SWORD);
+        ItemMeta iron_sword_meta = iron_sword.getItemMeta();
+        iron_sword_meta.addEnchant(Enchantment.FIRE_ASPECT, 2, true);
+        iron_sword_meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+        iron_sword_meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 5, true);
+        iron_sword_meta.addEnchant(Enchantment.DAMAGE_ARTHROPODS, 5, true);
+        iron_sword_meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 3, true);
+        iron_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
+        iron_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        iron_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        iron_sword.setItemMeta(iron_sword_meta);
+
+        ItemStack gold_sword = new ItemStack(Material.GOLDEN_SWORD);
+        ItemMeta gold_sword_meta = gold_sword.getItemMeta();
+        gold_sword_meta.addEnchant(Enchantment.FIRE_ASPECT, 2, true);
+        gold_sword_meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+        gold_sword_meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 5, true);
+        gold_sword_meta.addEnchant(Enchantment.DAMAGE_ARTHROPODS, 5, true);
+        gold_sword_meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 3, true);
+        gold_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
+        gold_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        gold_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        gold_sword.setItemMeta(gold_sword_meta);
+
         if(e.getRecipe() != null && e.getInventory().getResult() != null) {
             if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_SWORD) {
                 e.getInventory().setResult(wooden_sword);
             }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.STONE_SWORD) {
                 e.getInventory().setResult(stone_sword);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.IRON_SWORD) {
+                e.getInventory().setResult(iron_sword);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.GOLDEN_SWORD) {
+                e.getInventory().setResult(gold_sword);
             }
         }
     }
