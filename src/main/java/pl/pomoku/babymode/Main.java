@@ -9,7 +9,7 @@ import pl.pomoku.babymode.events.EntityDamageEvent.BlockItemsBurning;
 import pl.pomoku.babymode.events.EntityDamageEvent.ExtinguishingThePlayer;
 import pl.pomoku.babymode.events.EntityDeathEvent.IncreasingDropItemsFromMobs;
 import pl.pomoku.babymode.events.EntityDeathEvent.RespawnAnimals;
-import pl.pomoku.babymode.events.EntityMoveEvent.EntityExplodeEvent.BlockExlodeOfCreeper;
+import pl.pomoku.babymode.events.EntityExplodeEvent.BlockExlodeOfCreeper;
 import pl.pomoku.babymode.events.EntityMoveEvent.KillMobs;
 import pl.pomoku.babymode.events.EntityTeleportEvent.BlockEndermans;
 import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnNether;

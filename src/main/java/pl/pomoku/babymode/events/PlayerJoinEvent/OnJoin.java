@@ -14,7 +14,36 @@ public class OnJoin implements Listener {
     @EventHandler
     public void OnJoin(PlayerJoinEvent e){
         plugin.getConfig().set("babymode", false);
-        plugin.getConfig().set("kill_mobs", false);
+
+        plugin.getConfig().set("kill_mobs.mode", false);
+        plugin.getConfig().set("kill_mobs.zombie", false);
+        plugin.getConfig().set("kill_mobs.skeleton", false);
+        plugin.getConfig().set("kill_mobs.slime", false);
+        plugin.getConfig().set("kill_mobs.spider", false);
+        plugin.getConfig().set("kill_mobs.creeper", false);
+        plugin.getConfig().set("kill_mobs.zombie_villager", false);
+        plugin.getConfig().set("kill_mobs.witch", false);
+        plugin.getConfig().set("kill_mobs.drowned", false);
+        plugin.getConfig().set("kill_mobs.stray", false);
+        plugin.getConfig().set("kill_mobs.husk", false);
+        plugin.getConfig().set("kill_mobs.shulker", false);
+        plugin.getConfig().set("kill_mobs.elder_guardian", false);
+        plugin.getConfig().set("kill_mobs.guardian", false);
+        plugin.getConfig().set("kill_mobs.endermite", false);
+        plugin.getConfig().set("kill_mobs.zoglin", false);
+        plugin.getConfig().set("kill_mobs.piglin_brute", false);
+        plugin.getConfig().set("kill_mobs.evocation_fang", false);
+        plugin.getConfig().set("kill_mobs.vex", false);
+        plugin.getConfig().set("kill_mobs.ravager", false);
+        plugin.getConfig().set("kill_mobs.pillager", false);
+        plugin.getConfig().set("kill_mobs.evoker", false);
+        plugin.getConfig().set("kill_mobs.vindicator", false);
+        plugin.getConfig().set("kill_mobs.wither_skeleton", false);
+        plugin.getConfig().set("kill_mobs.silverfish", false);
+        plugin.getConfig().set("kill_mobs.magma_cube", false);
+        plugin.getConfig().set("kill_mobs.ghast", false);
+        plugin.getConfig().set("kill_mobs.blaze", false);
+
         plugin.saveConfig();
     }
 }

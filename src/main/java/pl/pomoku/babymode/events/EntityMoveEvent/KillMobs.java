@@ -13,29 +13,35 @@ public class KillMobs implements Listener {
     }
     @EventHandler
     public void KillMobs(EntityMoveEvent e){
-        if(plugin.getConfig().getBoolean("babymode") && plugin.getConfig().getBoolean("kill_mobs")) {
-            if (e.getEntity().getType() == EntityType.WITHER) {
-                e.getEntity().setHealth(0);
-            }else if (e.getEntity().getType() == EntityType.ZOMBIE) {
-                e.getEntity().setHealth(0);
-            } else if (e.getEntity().getType() == EntityType.CREEPER) {
-                e.getEntity().setHealth(0);
-            } else if (e.getEntity().getType() == EntityType.SKELETON) {
-                e.getEntity().setHealth(0);
-            } else if (e.getEntity().getType() == EntityType.SPIDER) {
-                e.getEntity().setHealth(0);
-            } else if (e.getEntity().getType() == EntityType.DROWNED) {
-                e.getEntity().setHealth(0);
-            } else if (e.getEntity().getType() == EntityType.PHANTOM) {
-                e.getEntity().setHealth(0);
-            } else if (e.getEntity().getType() == EntityType.ENDERMAN) {
-                e.getEntity().setHealth(0);
-            }else if (e.getEntity().getType() == EntityType.WITCH) {
-                e.getEntity().setHealth(0);
-            }else if (e.getEntity().getType() == EntityType.CAVE_SPIDER) {
-                e.getEntity().setHealth(0);
-            }else if (e.getEntity().getType() == EntityType.ZOMBIE_VILLAGER) {
-                e.getEntity().setHealth(0);
+        if(plugin.getConfig().getBoolean("babymode")) {
+            if(plugin.getConfig().getBoolean("kill_mobs.mode")) {
+                if (e.getEntity().getType() == EntityType.ZOMBIE) {
+                    if(plugin.getConfig().getBoolean("kill_mobs.zombie")) {
+                        e.getEntity().setHealth(0);
+                    }
+                } else if (e.getEntity().getType() == EntityType.CREEPER) {
+                    if (plugin.getConfig().getBoolean("kill_mobs.creeper")) {
+                        e.getEntity().setHealth(0);
+                    }
+                } else if (e.getEntity().getType() == EntityType.SKELETON) {
+                    if (plugin.getConfig().getBoolean("kill_mobs.skeleton")) {
+                        e.getEntity().setHealth(0);
+                    }
+                } else if (e.getEntity().getType() == EntityType.SPIDER) {
+                    e.getEntity().setHealth(0);
+                } else if (e.getEntity().getType() == EntityType.DROWNED) {
+                    e.getEntity().setHealth(0);
+                } else if (e.getEntity().getType() == EntityType.PHANTOM) {
+                    e.getEntity().setHealth(0);
+                } else if (e.getEntity().getType() == EntityType.ENDERMAN) {
+                    e.getEntity().setHealth(0);
+                } else if (e.getEntity().getType() == EntityType.WITCH) {
+                    e.getEntity().setHealth(0);
+                } else if (e.getEntity().getType() == EntityType.CAVE_SPIDER) {
+                    e.getEntity().setHealth(0);
+                } else if (e.getEntity().getType() == EntityType.ZOMBIE_VILLAGER) {
+                    e.getEntity().setHealth(0);
+                }
             }
         }
     }

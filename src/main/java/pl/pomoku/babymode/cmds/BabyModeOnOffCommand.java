@@ -43,11 +43,11 @@ public class BabyModeOnOffCommand implements CommandExecutor {
             }else if(args.length == 2) {
                 if (args[0].equals("killmobs")){
                     if (args[1].equals("on")){
-                        plugin.getConfig().set("kill_mobs", true);
+                        plugin.getConfig().set("kill_mobs.mode", true);
                         plugin.saveConfig();
                         p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow");
                     }else if(args[1].equals("off")){
-                        plugin.getConfig().set("kill_mobs", false);
+                        plugin.getConfig().set("kill_mobs.mode", false);
                         plugin.saveConfig();
                         p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow");
                     }
@@ -62,6 +62,43 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                         plugin.getConfig().set("kill_mobs", false);
                         plugin.saveConfig();
                         p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
+                    }
+                }
+            }else if(args.length == 3){
+                if (args[0].equals("killmobs")){
+                    if(args[1].equals("zombie")){
+                        if(args[2].equals("on")){
+                            plugin.getConfig().set("kill_mobs.zombie", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie)");
+                        }else if(args[2].equals("off")){
+                            plugin.getConfig().set("kill_mobs.zombie", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie)");
+
+                        }
+                    }else if(args[1].equals("creeper")){
+                        if(args[2].equals("on")){
+                            plugin.getConfig().set("kill_mobs.creeper", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Creeper)");
+                        }else if(args[2].equals("off")){
+                            plugin.getConfig().set("kill_mobs.creeper", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Creeper)");
+
+                        }
+                    }else if(args[1].equals("skeleton")){
+                        if(args[2].equals("on")){
+                            plugin.getConfig().set("kill_mobs.skeleton", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Skeleton)");
+                        }else if(args[2].equals("off")){
+                            plugin.getConfig().set("kill_mobs.skeleton", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Skeleton)");
+
+                        }
                     }
                 }
             }

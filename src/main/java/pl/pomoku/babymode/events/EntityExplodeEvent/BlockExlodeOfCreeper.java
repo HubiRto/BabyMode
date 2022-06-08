@@ -1,4 +1,4 @@
-package pl.pomoku.babymode.events.EntityMoveEvent.EntityExplodeEvent;
+package pl.pomoku.babymode.events.EntityExplodeEvent;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

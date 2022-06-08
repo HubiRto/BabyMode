@@ -31,15 +31,44 @@ public class BabyModeCommandCompleter implements TabCompleter {
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {
                     if(!args[0].equals("off")) {
-                        List<String> arguments = new ArrayList<>();
-                        arguments.add("on");
-                        arguments.add("off");
-                        arguments.add("info");
-                        return arguments;
+                        if(args[0].equals("killmobs")){
+                            List<String> arguments = new ArrayList<>();
+                            arguments.add("on");
+                            arguments.add("off");
+                            arguments.add("info");
+                            arguments.add("zombie");
+                            arguments.add("creeper");
+                            arguments.add("skeleton");
+                            return arguments;
+                        }else {
+                            List<String> arguments = new ArrayList<>();
+                            arguments.add("on");
+                            arguments.add("off");
+                            arguments.add("info");
+                            return arguments;
+                        }
+                    }
+                }
+            }else if(args.length == 3){
+                if(args[0].equals("killmobs")){
+                    switch (args[1]) {
+                        case "zombie":
+                        case "creeper":
+                        case "skeleton": {
+                            return getStrings();
+                        }
                     }
                 }
             }
         }
         return null;
+    }
+
+    @NotNull
+    private List<String> getStrings() {
+        List<String> arguments = new ArrayList<>();
+        arguments.add("on");
+        arguments.add("off");
+        return arguments;
     }
 }
