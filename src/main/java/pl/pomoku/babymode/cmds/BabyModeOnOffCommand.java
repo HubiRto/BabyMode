@@ -109,6 +109,30 @@ public class BabyModeOnOffCommand implements CommandExecutor {
 
                                 }
                                 break;
+                            case "slime":
+                                if (args[2].equals("on")) {
+                                    plugin.getConfig().set("kill_mobs.slime", true);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Slime)");
+                                } else if (args[2].equals("off")) {
+                                    plugin.getConfig().set("kill_mobs.slime", false);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Slime)");
+
+                                }
+                                break;
+                            case "spider":
+                                if (args[2].equals("on")) {
+                                    plugin.getConfig().set("kill_mobs.spider", true);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Spider)");
+                                } else if (args[2].equals("off")) {
+                                    plugin.getConfig().set("kill_mobs.spider", false);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Spider)");
+
+                                }
+                                break;
                         }
                     }
                     break;

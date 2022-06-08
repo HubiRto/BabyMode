@@ -31,8 +31,15 @@ public class KillMobs implements Listener {
                             e.getEntity().setHealth(0);
                         }
                         break;
+                    case SLIME:
+                        if (plugin.getConfig().getBoolean("kill_mobs.slime")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
                     case SPIDER:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.spider")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                     case DROWNED:
                         e.getEntity().setHealth(0);
