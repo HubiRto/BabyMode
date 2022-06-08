@@ -42,7 +42,19 @@ public class KillMobs implements Listener {
                         }
                         break;
                     case DROWNED:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.drowned")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case STRAY:
+                        if (plugin.getConfig().getBoolean("kill_mobs.stray")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case HUSK:
+                        if (plugin.getConfig().getBoolean("kill_mobs.husk")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                     case PHANTOM:
                         e.getEntity().setHealth(0);
@@ -51,7 +63,9 @@ public class KillMobs implements Listener {
                         e.getEntity().setHealth(0);
                         break;
                     case WITCH:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.witch")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                     case CAVE_SPIDER:
                         if (plugin.getConfig().getBoolean("kill_mobs.cave_spider")) {

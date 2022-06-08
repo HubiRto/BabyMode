@@ -74,88 +74,37 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     if (args[0].equals("killmobs")) {
                         switch (args[1]) {
                             case "zombie":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.zombie", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.zombie", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie)");
-
-                                }
+                                extracted(args, p, "kill_mobs.zombie", "Zombie");
                                 break;
                             case "creeper":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.creeper", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Creeper)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.creeper", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Creeper)");
-
-                                }
+                                extracted(args, p, "kill_mobs.creeper", "Creeper");
                                 break;
                             case "skeleton":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.skeleton", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Skeleton)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.skeleton", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Skeleton)");
-
-                                }
+                                extracted(args, p, "kill_mobs.skeleton", "Skeleton");
                                 break;
                             case "slime":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.slime", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Slime)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.slime", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Slime)");
-
-                                }
+                                extracted(args, p, "kill_mobs.slime", "Slime");
                                 break;
                             case "spider":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.spider", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Spider)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.spider", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Spider)");
-
-                                }
+                                extracted(args, p, "kill_mobs.spider", "Spider");
                                 break;
                             case "zombie_villager":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.zombie_villager", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie Villager)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.zombie_villager", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie Villager)");
-
-                                }
+                                extracted(args, p, "kill_mobs.zombie_villager", "Zombie Villager");
                                 break;
                             case "cave_spider":
-                                if (args[2].equals("on")) {
-                                    plugin.getConfig().set("kill_mobs.cave_spider", true);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Cave Spider)");
-                                } else if (args[2].equals("off")) {
-                                    plugin.getConfig().set("kill_mobs.cave_spider", false);
-                                    plugin.saveConfig();
-                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Cave Spider)");
-
-                                }
+                                extracted(args, p, "kill_mobs.cave_spider", "Cave Spider");
+                                break;
+                            case "witch":
+                                extracted(args, p, "kill_mobs.witch", "Witch");
+                                break;
+                            case "drowned":
+                                extracted(args, p, "kill_mobs.drowned", "Drowned");
+                                break;
+                            case "stray":
+                                extracted(args, p, "kill_mobs.stray", "Stray");
+                                break;
+                            case "husk":
+                                extracted(args, p, "kill_mobs.husk", "Husk");
                                 break;
                         }
                     }
@@ -165,5 +114,18 @@ public class BabyModeOnOffCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.RED + "Nie mozna wykonac tej komendy z konsoli!");
         }
         return true;
+    }
+
+    private void extracted(@NotNull String @NotNull [] args, Player p, String config, String name) {
+        if (args[2].equals("on")) {
+            plugin.getConfig().set(config, true);
+            plugin.saveConfig();
+            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (" + name + ")");
+        } else if (args[2].equals("off")) {
+            plugin.getConfig().set(config, false);
+            plugin.saveConfig();
+            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (" + name + ")");
+
+        }
     }
 }
