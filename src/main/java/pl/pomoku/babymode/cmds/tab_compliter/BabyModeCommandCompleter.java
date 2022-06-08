@@ -42,6 +42,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                             arguments.add("skeleton");
                             arguments.add("slime");
                             arguments.add("spider");
+                            arguments.add("cave_spider");
                             arguments.add("zombie_villager");
                             arguments.add("witch");
                             arguments.add("drowned");
@@ -81,6 +82,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                         case "creeper":
                         case "skeleton":
                         case "spider":
+                        case "cave_spider":
                         case "slime":
                         case "zombie_villager":
                         case "witch":

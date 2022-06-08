@@ -54,10 +54,14 @@ public class KillMobs implements Listener {
                         e.getEntity().setHealth(0);
                         break;
                     case CAVE_SPIDER:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.cave_spider")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                     case ZOMBIE_VILLAGER:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.zombie_villager")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                 }
             }

@@ -20,6 +20,7 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("kill_mobs.skeleton", false);
         plugin.getConfig().set("kill_mobs.slime", false);
         plugin.getConfig().set("kill_mobs.spider", false);
+        plugin.getConfig().set("kill_mobs.cave_spider", false);
         plugin.getConfig().set("kill_mobs.creeper", false);
         plugin.getConfig().set("kill_mobs.zombie_villager", false);
         plugin.getConfig().set("kill_mobs.witch", false);

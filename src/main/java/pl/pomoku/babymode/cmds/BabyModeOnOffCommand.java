@@ -133,6 +133,30 @@ public class BabyModeOnOffCommand implements CommandExecutor {
 
                                 }
                                 break;
+                            case "zombie_villager":
+                                if (args[2].equals("on")) {
+                                    plugin.getConfig().set("kill_mobs.zombie_villager", true);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie Villager)");
+                                } else if (args[2].equals("off")) {
+                                    plugin.getConfig().set("kill_mobs.zombie_villager", false);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Zombie Villager)");
+
+                                }
+                                break;
+                            case "cave_spider":
+                                if (args[2].equals("on")) {
+                                    plugin.getConfig().set("kill_mobs.cave_spider", true);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Cave Spider)");
+                                } else if (args[2].equals("off")) {
+                                    plugin.getConfig().set("kill_mobs.cave_spider", false);
+                                    plugin.saveConfig();
+                                    p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Potworow (Cave Spider)");
+
+                                }
+                                break;
                         }
                     }
                     break;
