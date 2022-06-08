@@ -9,13 +9,14 @@ import pl.pomoku.babymode.Main;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BabyModeCommandCompleter implements TabCompleter {
     Main plugin;
 
     public BabyModeCommandCompleter(Main m){
         plugin = m;
-        m.getCommand("babymode").setTabCompleter(this);
+        Objects.requireNonNull(m.getCommand("babymode")).setTabCompleter(this);
     }
 
     @Override
@@ -39,6 +40,30 @@ public class BabyModeCommandCompleter implements TabCompleter {
                             arguments.add("zombie");
                             arguments.add("creeper");
                             arguments.add("skeleton");
+                            arguments.add("slime");
+                            arguments.add("spider");
+                            arguments.add("zombie_villager");
+                            arguments.add("witch");
+                            arguments.add("drowned");
+                            arguments.add("stray");
+                            arguments.add("husk");
+                            arguments.add("shulker");
+                            arguments.add("elder_guardian");
+                            arguments.add("guardian");
+                            arguments.add("endermite");
+                            arguments.add("zoglin");
+                            arguments.add("piglin_brute");
+                            arguments.add("evocation_fang");
+                            arguments.add("vex");
+                            arguments.add("pillager");
+                            arguments.add("ravager");
+                            arguments.add("evoker");
+                            arguments.add("vindicator");
+                            arguments.add("wither_skeleton");
+                            arguments.add("silverfish");
+                            arguments.add("magma_cube");
+                            arguments.add("ghast");
+                            arguments.add("blaze");
                             return arguments;
                         }else {
                             List<String> arguments = new ArrayList<>();
@@ -54,7 +79,31 @@ public class BabyModeCommandCompleter implements TabCompleter {
                     switch (args[1]) {
                         case "zombie":
                         case "creeper":
-                        case "skeleton": {
+                        case "skeleton":
+                        case "spider":
+                        case "slime":
+                        case "zombie_villager":
+                        case "witch":
+                        case "drowned":
+                        case "stray":
+                        case "husk":
+                        case "shulker":
+                        case "elder_guardian":
+                        case "guardian":
+                        case "endermite":
+                        case "zoglin":
+                        case "piglin_brute":
+                        case "evocation_fang":
+                        case "vex":
+                        case "ravager":
+                        case "pillager":
+                        case "evoker":
+                        case "vindicator":
+                        case "wither_skeleton":
+                        case "silverfish":
+                        case "magma_cube":
+                        case "ghast":
+                        case "blaze": {
                             return getStrings();
                         }
                     }
