@@ -5,6 +5,7 @@ import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
 import pl.pomoku.babymode.cmds.tab_compliter.BabyModeCommandCompleter;
 import pl.pomoku.babymode.events.BlockPlaceEvent.AutoCreatePortal;
 import pl.pomoku.babymode.events.EntityDamageByEntityEvent.AutoBurningAnimals;
+import pl.pomoku.babymode.events.EntityDamageEvent.AllDamage;
 import pl.pomoku.babymode.events.EntityDamageEvent.BlockItemsBurning;
 import pl.pomoku.babymode.events.EntityDamageEvent.ExtinguishingThePlayer;
 import pl.pomoku.babymode.events.EntityDeathEvent.IncreasingDropItemsFromMobs;
@@ -45,5 +46,6 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CraftEvent(this), this);
         getServer().getPluginManager().registerEvents(new BlockItemsBurning(this), this);
         getServer().getPluginManager().registerEvents(new AutoEnchantUpgradeItems(this), this);
+        getServer().getPluginManager().registerEvents(new AllDamage(this), this);
     }
 }

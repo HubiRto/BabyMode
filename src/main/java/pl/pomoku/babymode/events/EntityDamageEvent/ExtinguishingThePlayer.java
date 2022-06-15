@@ -18,15 +18,21 @@ public class ExtinguishingThePlayer implements Listener {
 
     @EventHandler
     public void onPlayerDamage(EntityDamageEvent e) {
-        if (e.getEntity() instanceof Player) {
-            Player p = ((Player) e.getEntity()).getPlayer();
-            if(plugin.getConfig().getBoolean("babymode")) {
-                e.setCancelled(true);
-                if (e.getCause().equals(EntityDamageEvent.DamageCause.FIRE_TICK)) {
+        if(plugin.getConfig().getBoolean("babymode")) {
+            if (plugin.getConfig().getBoolean("extinguishing")) {
+                if (e.getEntity() instanceof Player) {
+                    Player p = ((Player) e.getEntity()).getPlayer();
                     Location loc = p.getLocation();
                     Block b = loc.getBlock();
-                    b.setType(Material.WATER);
-                    p.sendMessage(ChatColor.WHITE + "<" + ChatColor.GOLD + "Bog" + ChatColor.WHITE + ">" + ChatColor.GRAY + " Widzialem ze sie paliles, wiec cie ugasilem swoim strumieniem.");
+                    if (b.getType() == Material.FIRE) {
+                        b.setType(Material.AIR);
+                        p.setFireTicks(0);
+                        //Tutaj bedzie wiadomosc
+                    } else if (b.getType() == Material.SOUL_FIRE) {
+                        b.setType(Material.AIR);
+                        p.setFireTicks(0);
+                        //Tutaj bedzie wiadomosc
+                    }
                 }
             }
         }

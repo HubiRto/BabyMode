@@ -28,6 +28,8 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("off");
                 arguments.add("killmobs");
                 arguments.add("all");
+                arguments.add("extinguishing");
+                arguments.add("alldamage");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {

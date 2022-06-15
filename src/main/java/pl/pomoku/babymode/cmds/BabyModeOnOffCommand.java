@@ -59,14 +59,40 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     } else if (args[0].equals("all")) {
                         if (args[1].equals("on")) {
                             plugin.getConfig().set("babymode", true);
-                            plugin.getConfig().set("kill_mobs", true);
+                            plugin.getConfig().set("alldamage", true);
+                            plugin.getConfig().set("extinguishing", true);
+                            plugin.getConfig().set("kill_mobs.mode", true);
+                            plugin.getConfig().set("kill_mobs.zombie", true);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
                         } else if (args[1].equals("off")) {
                             plugin.getConfig().set("babymode", false);
-                            plugin.getConfig().set("kill_mobs", false);
+                            plugin.getConfig().set("extinguishing", false);
+                            plugin.getConfig().set("alldamage", false);
+                            plugin.getConfig().set("kill_mobs.mode", false);
+                            plugin.getConfig().set("kill_mobs.zombie", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
+                        }
+                    } else if (args[0].equals("extinguishing")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("extinguishing", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Gaszenie");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("extinguishing", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Gaszenie");
+                        }
+                    }else if (args[0].equals("alldamage")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("alldamage", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Obrazenia");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("alldamage", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Obrazenia");
                         }
                     }
                     break;

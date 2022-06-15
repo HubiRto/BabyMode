@@ -14,6 +14,8 @@ public class OnJoin implements Listener {
     @EventHandler
     public void OnJoin(PlayerJoinEvent e){
         plugin.getConfig().set("babymode", false);
+        plugin.getConfig().set("extinguishing", false);
+        plugin.getConfig().set("alldamage", false);
 
         plugin.getConfig().set("kill_mobs.mode", false);
         plugin.getConfig().set("kill_mobs.zombie", false);
