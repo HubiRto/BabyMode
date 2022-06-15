@@ -77,6 +77,21 @@ public class KillMobs implements Listener {
                             e.getEntity().setHealth(0);
                         }
                         break;
+                    case SHULKER:
+                        if (plugin.getConfig().getBoolean("kill_mobs.shulker")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case ELDER_GUARDIAN:
+                        if (plugin.getConfig().getBoolean("kill_mobs.elder_guardian")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case GUARDIAN:
+                        if (plugin.getConfig().getBoolean("kill_mobs.guardian")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
                 }
             }
         }

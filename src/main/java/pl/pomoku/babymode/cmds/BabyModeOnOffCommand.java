@@ -106,6 +106,15 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             case "husk":
                                 extracted(args, p, "kill_mobs.husk", "Husk");
                                 break;
+                            case "shulker":
+                                extracted(args, p, "kill_mobs.shulker", "Shulker");
+                                break;
+                            case "elder_guardian":
+                                extracted(args, p, "kill_mobs.elder_guardian", "Elder Guardian");
+                                break;
+                            case "guardian":
+                                extracted(args, p, "kill_mobs.guardian", "Guardian");
+                                break;
                         }
                     }
                     break;
