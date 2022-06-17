@@ -17,6 +17,7 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("extinguishing", false);
         plugin.getConfig().set("alldamage", false);
         plugin.getConfig().set("crate_portal", false);
+        plugin.getConfig().set("auto_enchant", false);
 
         plugin.getConfig().set("kill_mobs.mode", false);
         plugin.getConfig().set("kill_mobs.zombie", false);
