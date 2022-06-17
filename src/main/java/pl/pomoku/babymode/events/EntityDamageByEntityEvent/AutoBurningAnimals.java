@@ -17,16 +17,18 @@ public class AutoBurningAnimals implements Listener {
         if(e.getDamager().getType() == EntityType.PLAYER) {
             Player p = (Player) e.getDamager();
             if (plugin.getConfig().getBoolean("babymode")) {
-                if (e.getEntity().getType() == EntityType.COW) {
-                    e.getEntity().setFireTicks(60);
-                } else if (e.getEntity().getType() == EntityType.PIG) {
-                    e.getEntity().setFireTicks(60);
-                } else if (e.getEntity().getType() == EntityType.SHEEP) {
-                    e.getEntity().setFireTicks(60);
-                } else if (e.getEntity().getType() == EntityType.CHICKEN) {
-                    e.getEntity().setFireTicks(60);
-                } else if (e.getEntity().getType() == EntityType.RABBIT) {
-                    e.getEntity().setFireTicks(60);
+                if (plugin.getConfig().getBoolean("auto_cook")) {
+                    if (e.getEntity().getType() == EntityType.COW) {
+                        e.getEntity().setFireTicks(60);
+                    } else if (e.getEntity().getType() == EntityType.PIG) {
+                        e.getEntity().setFireTicks(60);
+                    } else if (e.getEntity().getType() == EntityType.SHEEP) {
+                        e.getEntity().setFireTicks(60);
+                    } else if (e.getEntity().getType() == EntityType.CHICKEN) {
+                        e.getEntity().setFireTicks(60);
+                    } else if (e.getEntity().getType() == EntityType.RABBIT) {
+                        e.getEntity().setFireTicks(60);
+                    }
                 }
             }
         }

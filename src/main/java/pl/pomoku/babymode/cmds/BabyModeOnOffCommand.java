@@ -33,6 +33,8 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" §8>> §e/bm §fextinguishing §8[§aon§7/§coff§7/§6info§8] §7- gaszenie.");
                     p.sendMessage(" §8>> §e/bm §fcreate_portal §8[§aon§7/§coff§7/§6info§8] §7- tworzenie portalu.");
                     p.sendMessage(" §8>> §e/bm §fauto_enchant §8[§aon§7/§coff§7/§6info§8] §7- automatyczne ulepszanie.");
+                    p.sendMessage(" §8>> §e/bm §fblock_explode §8[§aon§7/§coff§7/§6info§8] §7- blokowanie wybuchow.");
+                    p.sendMessage(" §8>> §e/bm §fauto_cook §8[§aon§7/§coff§7/§6info§8] §7- automatyczne przepalanie.");
                     p.sendMessage(" ");
                     p.sendMessage("§8[§b+§8]§m------------§r§8[ §bBABY MODE §8]§m------------§r§8[§b+§8]");
                     p.sendMessage(" ");
@@ -67,6 +69,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("crate_portal", true);
                             plugin.getConfig().set("auto_enchant", true);
                             plugin.getConfig().set("block_explode", true);
+                            plugin.getConfig().set("auto_cook", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -106,6 +109,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("crate_portal", false);
                             plugin.getConfig().set("auto_enchant", false);
                             plugin.getConfig().set("block_explode", false);
+                            plugin.getConfig().set("auto_cook", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -189,6 +193,16 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_explode", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Wybuchow");
+                        }
+                    }else if (args[0].equals("auto_cook")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("auto_cook", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Automatyczne przepalanie");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("auto_cook", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Automatyczne przepalanie");
                         }
                     }
                     break;
