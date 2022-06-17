@@ -73,6 +73,9 @@ public class BabyModeCommandCompleter implements TabCompleter {
                             arguments.add("blaze");
                             arguments.add("phantom");
                             arguments.add("enderman");
+                            arguments.add("hoglin");
+                            arguments.add("piglin");
+                            arguments.add("zombified_piglin");
                             return arguments;
                         }else {
                             List<String> arguments = new ArrayList<>();
@@ -113,6 +116,9 @@ public class BabyModeCommandCompleter implements TabCompleter {
                         case "ghast":
                         case "phantom":
                         case "enderman":
+                        case "hoglin":
+                        case "piglin":
+                        case "zombified_piglin":
                         case "blaze": {
                             return getStrings();
                         }

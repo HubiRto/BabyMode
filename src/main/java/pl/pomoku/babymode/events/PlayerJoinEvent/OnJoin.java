@@ -51,6 +51,9 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("kill_mobs.ghast", false);
         plugin.getConfig().set("kill_mobs.blaze", false);
         plugin.getConfig().set("kill_mobs.phantom", false);
+        plugin.getConfig().set("kill_mobs.hoglin", false);
+        plugin.getConfig().set("kill_mobs.piglin", false);
+        plugin.getConfig().set("kill_mobs.zombified_piglin", false);
 
         plugin.saveConfig();
     }

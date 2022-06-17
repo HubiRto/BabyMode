@@ -103,6 +103,9 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("kill_mobs.magma_cube", true);
                             plugin.getConfig().set("kill_mobs.ghast", true);
                             plugin.getConfig().set("kill_mobs.blaze", true);
+                            plugin.getConfig().set("kill_mobs.hoglin", true);
+                            plugin.getConfig().set("kill_mobs.piglin", true);
+                            plugin.getConfig().set("kill_mobs.zombified_piglin", true);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
                         } else if (args[1].equals("off")) {
@@ -145,6 +148,9 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("kill_mobs.magma_cube", false);
                             plugin.getConfig().set("kill_mobs.ghast", false);
                             plugin.getConfig().set("kill_mobs.blaze", false);
+                            plugin.getConfig().set("kill_mobs.hoglin", false);
+                            plugin.getConfig().set("kill_mobs.piglin", false);
+                            plugin.getConfig().set("kill_mobs.zombified_piglin", false);
 
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
@@ -317,6 +323,15 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                                 break;
                             case "evoker":
                                 extracted(args, p, "kill_mobs.evoker", "Evoker");
+                                break;
+                            case "hoglin":
+                                extracted(args, p, "kill_mobs.hoglin", "Hoglin");
+                                break;
+                            case "piglin":
+                                extracted(args, p, "kill_mobs.piglin", "Piglin");
+                                break;
+                            case "zombified_piglin":
+                                extracted(args, p, "kill_mobs.zombified_piglin", "Zombified Piglin");
                                 break;
                         }
                     }

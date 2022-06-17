@@ -156,6 +156,21 @@ public class KillMobs implements Listener {
                             e.getEntity().setHealth(0);
                         }
                         break;
+                    case PIGLIN:
+                        if (plugin.getConfig().getBoolean("kill_mobs.piglin")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case HOGLIN:
+                        if (plugin.getConfig().getBoolean("kill_mobs.hoglin")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case ZOMBIFIED_PIGLIN:
+                        if (plugin.getConfig().getBoolean("kill_mobs.zombified_piglin")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
                 }
             }
         }
