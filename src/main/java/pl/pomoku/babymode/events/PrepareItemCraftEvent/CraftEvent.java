@@ -488,6 +488,13 @@ public class CraftEvent implements Listener {
                 fishing_rod_meta.addEnchant(Enchantment.LUCK, 3, true);
                 fishing_rod.setItemMeta(fishing_rod_meta);
 
+                //SHIELD
+                ItemStack shield = new ItemStack(Material.SHIELD);
+                ItemMeta shield_meta = shield.getItemMeta();
+                shield_meta.addEnchant(Enchantment.MENDING, 1, true);
+                shield_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+                shield.setItemMeta(shield_meta);
+
                 if (e.getRecipe() != null && e.getInventory().getResult() != null) {
                     if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_SWORD) {
                         e.getInventory().setResult(wooden_sword);
@@ -581,6 +588,8 @@ public class CraftEvent implements Listener {
                         e.getInventory().setResult(flint_and_steel);
                     } else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.FISHING_ROD) {
                         e.getInventory().setResult(fishing_rod);
+                    }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.SHIELD) {
+                        e.getInventory().setResult(shield);
                     }
                 }
             }
