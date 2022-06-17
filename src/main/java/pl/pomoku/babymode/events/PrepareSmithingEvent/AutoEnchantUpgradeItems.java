@@ -29,9 +29,19 @@ public class AutoEnchantUpgradeItems implements Listener {
         netherite_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
         netherite_sword.setItemMeta(netherite_sword_meta);
 
+        ItemStack netherite_axe = new ItemStack(Material.NETHERITE_AXE);
+        ItemMeta netherite_axe_meta = netherite_axe.getItemMeta();
+        netherite_axe_meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+        netherite_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        netherite_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        netherite_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        netherite_axe.setItemMeta(netherite_axe_meta);
+
         if(e.getResult() != null) {
             if(e.getResult().getType() == Material.NETHERITE_SWORD){
                 e.setResult(netherite_sword);
+            }else if(e.getResult().getType() == Material.NETHERITE_AXE){
+                e.setResult(netherite_axe);
             }
         }
     }
