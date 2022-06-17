@@ -73,6 +73,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("auto_cook", true);
                             plugin.getConfig().set("block_item_burn", true);
                             plugin.getConfig().set("make_obs", true);
+                            plugin.getConfig().set("more_loot", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -118,6 +119,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("auto_cook", false);
                             plugin.getConfig().set("block_item_burn", false);
                             plugin.getConfig().set("make_obs", false);
+                            plugin.getConfig().set("more_loot", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -234,6 +236,16 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("make_obs", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Tworzenie Obsydianu");
+                        }
+                    }else if (args[0].equals("more_loot")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("more_loot", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wiecej loot'u");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("more_loot", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wiecej loot'u");
                         }
                     }
                     break;

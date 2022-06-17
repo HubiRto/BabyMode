@@ -18,10 +18,7 @@ public class IncreasingDropItemsFromMobs implements Listener {
     @EventHandler
     public void EntitiDiead(EntityDeathEvent e){
         if(plugin.getConfig().getBoolean("babymode")) {
-            if(e.getEntity().getKiller() != null){
-                Player p = e.getEntity().getKiller();
-                p.getInventory().getItemInMainHand().containsEnchantment(Enchantment.LOOT_BONUS_MOBS);
-            }else {
+            if(plugin.getConfig().getBoolean("more_loot")) {
                 List<ItemStack> items = e.getDrops();
                 for (ItemStack item : items) {
                     int b = (item.getAmount()) * 3;
