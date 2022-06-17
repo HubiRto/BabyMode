@@ -21,6 +21,10 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("block_explode", false);
         plugin.getConfig().set("block_item_burn", false);
         plugin.getConfig().set("make_obs", false);
+        plugin.getConfig().set("more_loot", false);
+        plugin.getConfig().set("respawn_animals", false);
+        plugin.getConfig().set("block_enderman", false);
+        plugin.getConfig().set("join_nether", false);
 
         plugin.getConfig().set("kill_mobs.mode", false);
         plugin.getConfig().set("kill_mobs.zombie", false);

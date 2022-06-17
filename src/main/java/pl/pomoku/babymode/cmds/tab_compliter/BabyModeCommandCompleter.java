@@ -37,6 +37,9 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("block_item_burn");
                 arguments.add("make_obs");
                 arguments.add("more_loot");
+                arguments.add("respawn_animals");
+                arguments.add("block_enderman");
+                arguments.add("join_nether");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {

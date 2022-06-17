@@ -35,7 +35,12 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" §8>> §e/bm §fauto_enchant §8[§aon§7/§coff§7/§6info§8] §7- automatyczne ulepszanie.");
                     p.sendMessage(" §8>> §e/bm §fblock_explode §8[§aon§7/§coff§7/§6info§8] §7- blokowanie wybuchow.");
                     p.sendMessage(" §8>> §e/bm §fauto_cook §8[§aon§7/§coff§7/§6info§8] §7- automatyczne przepalanie.");
-                    p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§7/§6info§8] §7- blokowanie splaniecia itemow.");
+                    p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§7/§6info§8] §7- splanie itemow.");
+                    p.sendMessage(" §8>> §e/bm §fmake_obs §8[§aon§7/§coff§7/§6info§8] §7- tworzenie obsydianu.");
+                    p.sendMessage(" §8>> §e/bm §fmore_loot §8[§aon§7/§coff§7/§6info§8] §7- wiekszony loot.");
+                    p.sendMessage(" §8>> §e/bm §frespawn_animals §8[§aon§7/§coff§7/§6info§8] §7- odradzanie zwierzat.");
+                    p.sendMessage(" §8>> §e/bm §fblock_enderman §8[§aon§7/§coff§7/§6info§8] §7- blokowanie endermanow.");
+                    p.sendMessage(" §8>> §e/bm §fjoin_nether §8[§aon§7/§coff§7/§6info§8] §7- starpack w netherze.");
                     p.sendMessage(" ");
                     p.sendMessage("§8[§b+§8]§m------------§r§8[ §bBABY MODE §8]§m------------§r§8[§b+§8]");
                     p.sendMessage(" ");
@@ -74,6 +79,9 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_item_burn", true);
                             plugin.getConfig().set("make_obs", true);
                             plugin.getConfig().set("more_loot", true);
+                            plugin.getConfig().set("respawn_animals", true);
+                            plugin.getConfig().set("block_enderman", true);
+                            plugin.getConfig().set("join_nether", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -120,6 +128,9 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_item_burn", false);
                             plugin.getConfig().set("make_obs", false);
                             plugin.getConfig().set("more_loot", false);
+                            plugin.getConfig().set("respawn_animals", false);
+                            plugin.getConfig().set("block_enderman", false);
+                            plugin.getConfig().set("join_nether", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -246,6 +257,36 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("more_loot", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wiecej loot'u");
+                        }
+                    }else if (args[0].equals("respawn_animals")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("respawn_animals", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Odnawianie Zwierzat");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("respawn_animals", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Odnawianie Zwierzat");
+                        }
+                    }else if (args[0].equals("block_enderman")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("block_enderman", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Endermanow");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("block_enderman", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Endermanow");
+                        }
+                    }else if (args[0].equals("join_nether")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("join_nether", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Startpack w netherze");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("join_nether", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Startpack w netherze");
                         }
                     }
                     break;

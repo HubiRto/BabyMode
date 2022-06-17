@@ -14,8 +14,10 @@ public class BlockEndermans implements Listener {
     @EventHandler
     public void BlockEndermanEvent(EntityTeleportEvent e){
         if(plugin.getConfig().getBoolean("babymode")) {
-            if (e.getEntity().getType() == EntityType.ENDERMAN) {
-                e.setCancelled(true);
+            if(plugin.getConfig().getBoolean("join_nether")) {
+                if (e.getEntity().getType() == EntityType.ENDERMAN) {
+                    e.setCancelled(true);
+                }
             }
         }
     }
