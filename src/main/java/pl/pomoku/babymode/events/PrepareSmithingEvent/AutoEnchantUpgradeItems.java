@@ -37,11 +37,21 @@ public class AutoEnchantUpgradeItems implements Listener {
         netherite_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
         netherite_axe.setItemMeta(netherite_axe_meta);
 
+        ItemStack netherite_pickaxe = new ItemStack(Material.NETHERITE_PICKAXE);
+        ItemMeta netherite_pickaxe_meta = netherite_pickaxe.getItemMeta();
+        netherite_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        netherite_pickaxe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        netherite_pickaxe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        netherite_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 5, true);
+        netherite_pickaxe.setItemMeta(netherite_pickaxe_meta);
+
         if(e.getResult() != null) {
             if(e.getResult().getType() == Material.NETHERITE_SWORD){
                 e.setResult(netherite_sword);
             }else if(e.getResult().getType() == Material.NETHERITE_AXE){
                 e.setResult(netherite_axe);
+            }else if(e.getResult().getType() == Material.NETHERITE_PICKAXE){
+                e.setResult(netherite_pickaxe);
             }
         }
     }

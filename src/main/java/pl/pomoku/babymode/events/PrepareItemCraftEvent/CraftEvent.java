@@ -120,6 +120,46 @@ public class CraftEvent implements Listener {
         diamond_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
         diamond_axe.setItemMeta(diamond_axe_meta);
 
+        ItemStack wooden_pickaxe = new ItemStack(Material.WOODEN_PICKAXE);
+        ItemMeta wooden_pickaxe_meta = wooden_pickaxe.getItemMeta();
+        wooden_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        wooden_pickaxe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        wooden_pickaxe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        wooden_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        wooden_pickaxe.setItemMeta(wooden_pickaxe_meta);
+
+        ItemStack stone_pickaxe = new ItemStack(Material.STONE_PICKAXE);
+        ItemMeta stone_pickaxe_meta = stone_pickaxe.getItemMeta();
+        stone_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        stone_pickaxe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        stone_pickaxe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        stone_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        stone_pickaxe.setItemMeta(stone_pickaxe_meta);
+
+        ItemStack iron_pickaxe = new ItemStack(Material.IRON_PICKAXE);
+        ItemMeta iron_pickaxe_meta = iron_pickaxe.getItemMeta();
+        iron_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        iron_pickaxe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        iron_pickaxe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        iron_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        iron_pickaxe.setItemMeta(iron_pickaxe_meta);
+
+        ItemStack gold_pickaxe = new ItemStack(Material.GOLDEN_PICKAXE);
+        ItemMeta gold_pickaxe_meta = gold_pickaxe.getItemMeta();
+        gold_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        gold_pickaxe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        gold_pickaxe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        gold_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        gold_pickaxe.setItemMeta(gold_pickaxe_meta);
+
+        ItemStack diamond_pickaxe = new ItemStack(Material.DIAMOND_PICKAXE);
+        ItemMeta diamond_pickaxe_meta = diamond_pickaxe.getItemMeta();
+        diamond_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        diamond_pickaxe_meta.addEnchant(Enchantment.MENDING, 1, true);
+        diamond_pickaxe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        diamond_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        diamond_pickaxe.setItemMeta(diamond_pickaxe_meta);
+
         if(e.getRecipe() != null && e.getInventory().getResult() != null) {
             if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_SWORD) {
                 e.getInventory().setResult(wooden_sword);
@@ -141,6 +181,16 @@ public class CraftEvent implements Listener {
                 e.getInventory().setResult(gold_axe);
             }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.DIAMOND_AXE) {
                 e.getInventory().setResult(diamond_axe);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_PICKAXE) {
+                e.getInventory().setResult(wooden_pickaxe);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.STONE_PICKAXE) {
+                e.getInventory().setResult(stone_pickaxe);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.IRON_PICKAXE) {
+                e.getInventory().setResult(iron_pickaxe);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.GOLDEN_PICKAXE) {
+                e.getInventory().setResult(gold_pickaxe);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.DIAMOND_PICKAXE) {
+                e.getInventory().setResult(diamond_pickaxe);
             }
         }
     }
