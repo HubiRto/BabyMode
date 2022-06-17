@@ -13,7 +13,9 @@ public class BlockExlodeOfCreeper implements Listener {
     @EventHandler
     public void CreeperExpodeBlock(EntityExplodeEvent e){
         if(plugin.getConfig().getBoolean("babymode")) {
-            e.setCancelled(true);
+            if(plugin.getConfig().getBoolean("block_explode")) {
+                e.setCancelled(true);
+            }
         }
     }
 }

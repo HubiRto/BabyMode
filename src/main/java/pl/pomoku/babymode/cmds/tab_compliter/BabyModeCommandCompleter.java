@@ -32,6 +32,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("alldamage");
                 arguments.add("crate_portal");
                 arguments.add("auto_enchant");
+                arguments.add("block_explode");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {

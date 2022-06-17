@@ -66,6 +66,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("extinguishing", true);
                             plugin.getConfig().set("crate_portal", true);
                             plugin.getConfig().set("auto_enchant", true);
+                            plugin.getConfig().set("block_explode", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -104,6 +105,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("alldamage", false);
                             plugin.getConfig().set("crate_portal", false);
                             plugin.getConfig().set("auto_enchant", false);
+                            plugin.getConfig().set("block_explode", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -177,6 +179,16 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("auto_enchant", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Automatyczne Ulepszanie");
+                        }
+                    }else if (args[0].equals("block_explode")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("block_explode", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Wybuchow");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("block_explode", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie Wybuchow");
                         }
                     }
                     break;
