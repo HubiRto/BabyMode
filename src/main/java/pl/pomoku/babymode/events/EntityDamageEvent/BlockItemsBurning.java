@@ -16,8 +16,14 @@ public class BlockItemsBurning implements Listener {
     public void ItemsBurning(EntityDamageEvent e){
         Entity en = e.getEntity();
         if(en instanceof Item){
-            if (e.getCause() == EntityDamageEvent.DamageCause.LAVA) {
-                e.setCancelled(true);
+            if (plugin.getConfig().getBoolean("babymode")) {
+                if (plugin.getConfig().getBoolean("block_item_burn")) {
+                    if (e.getCause() == EntityDamageEvent.DamageCause.LAVA) {
+                        e.setCancelled(true);
+                    } else if (e.getCause() == EntityDamageEvent.DamageCause.FIRE) {
+                        e.setCancelled(true);
+                    }
+                }
             }
         }
     }

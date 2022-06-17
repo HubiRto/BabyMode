@@ -34,6 +34,8 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("auto_enchant");
                 arguments.add("block_explode");
                 arguments.add("auto_cook");
+                arguments.add("block_item_burn");
+                arguments.add("make_obs");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {

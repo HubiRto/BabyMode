@@ -35,6 +35,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" §8>> §e/bm §fauto_enchant §8[§aon§7/§coff§7/§6info§8] §7- automatyczne ulepszanie.");
                     p.sendMessage(" §8>> §e/bm §fblock_explode §8[§aon§7/§coff§7/§6info§8] §7- blokowanie wybuchow.");
                     p.sendMessage(" §8>> §e/bm §fauto_cook §8[§aon§7/§coff§7/§6info§8] §7- automatyczne przepalanie.");
+                    p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§7/§6info§8] §7- blokowanie splaniecia itemow.");
                     p.sendMessage(" ");
                     p.sendMessage("§8[§b+§8]§m------------§r§8[ §bBABY MODE §8]§m------------§r§8[§b+§8]");
                     p.sendMessage(" ");
@@ -70,6 +71,8 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("auto_enchant", true);
                             plugin.getConfig().set("block_explode", true);
                             plugin.getConfig().set("auto_cook", true);
+                            plugin.getConfig().set("block_item_burn", true);
+                            plugin.getConfig().set("make_obs", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -110,6 +113,8 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("auto_enchant", false);
                             plugin.getConfig().set("block_explode", false);
                             plugin.getConfig().set("auto_cook", false);
+                            plugin.getConfig().set("block_item_burn", false);
+                            plugin.getConfig().set("make_obs", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -203,6 +208,26 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("auto_cook", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Automatyczne przepalanie");
+                        }
+                    }else if (args[0].equals("block_item_burn")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("block_item_burn", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie spalania itemow");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("block_item_burn", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Blokowanie spalania itemow");
+                        }
+                    }else if (args[0].equals("make_obs")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("make_obs", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Tworzenie Obsydianu");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("make_obs", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Tworzenie Obsydianu");
                         }
                     }
                     break;
