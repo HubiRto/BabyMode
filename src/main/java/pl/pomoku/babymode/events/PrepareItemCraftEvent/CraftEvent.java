@@ -30,6 +30,7 @@ public class CraftEvent implements Listener {
         wooden_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
         wooden_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         wooden_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        wooden_sword_meta.addEnchant(Enchantment.SWEEPING_EDGE, 3, true);
         wooden_sword.setItemMeta(wooden_sword_meta);
 
         ItemStack stone_sword = new ItemStack(Material.STONE_SWORD);
@@ -42,6 +43,7 @@ public class CraftEvent implements Listener {
         stone_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
         stone_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         stone_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        stone_sword_meta.addEnchant(Enchantment.SWEEPING_EDGE, 3, true);
         stone_sword.setItemMeta(stone_sword_meta);
 
         ItemStack iron_sword = new ItemStack(Material.IRON_SWORD);
@@ -54,6 +56,7 @@ public class CraftEvent implements Listener {
         iron_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
         iron_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         iron_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        iron_sword_meta.addEnchant(Enchantment.SWEEPING_EDGE, 3, true);
         iron_sword.setItemMeta(iron_sword_meta);
 
         ItemStack gold_sword = new ItemStack(Material.GOLDEN_SWORD);
@@ -66,6 +69,7 @@ public class CraftEvent implements Listener {
         gold_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
         gold_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         gold_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        gold_sword_meta.addEnchant(Enchantment.SWEEPING_EDGE, 3, true);
         gold_sword.setItemMeta(gold_sword_meta);
 
         ItemStack diamond_sword = new ItemStack(Material.DIAMOND_SWORD);
@@ -78,6 +82,7 @@ public class CraftEvent implements Listener {
         diamond_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
         diamond_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         diamond_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        diamond_sword_meta.addEnchant(Enchantment.SWEEPING_EDGE, 3, true);
         diamond_sword.setItemMeta(diamond_sword_meta);
 
         ItemStack wooden_axe = new ItemStack(Material.WOODEN_AXE);
@@ -86,6 +91,7 @@ public class CraftEvent implements Listener {
         wooden_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         wooden_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
         wooden_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        wooden_axe_meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
         wooden_axe.setItemMeta(wooden_axe_meta);
 
         ItemStack stone_axe = new ItemStack(Material.STONE_AXE);
@@ -94,6 +100,7 @@ public class CraftEvent implements Listener {
         stone_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         stone_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
         stone_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        stone_axe_meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
         stone_axe.setItemMeta(stone_axe_meta);
 
         ItemStack iron_axe = new ItemStack(Material.IRON_AXE);
@@ -102,6 +109,7 @@ public class CraftEvent implements Listener {
         iron_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         iron_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
         iron_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        iron_axe_meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
         iron_axe.setItemMeta(iron_axe_meta);
 
         ItemStack gold_axe = new ItemStack(Material.GOLDEN_AXE);
@@ -110,6 +118,7 @@ public class CraftEvent implements Listener {
         gold_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         gold_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
         gold_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        gold_axe_meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
         gold_axe.setItemMeta(gold_axe_meta);
 
         ItemStack diamond_axe = new ItemStack(Material.DIAMOND_AXE);
@@ -118,6 +127,7 @@ public class CraftEvent implements Listener {
         diamond_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         diamond_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
         diamond_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        diamond_axe_meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
         diamond_axe.setItemMeta(diamond_axe_meta);
 
         ItemStack wooden_pickaxe = new ItemStack(Material.WOODEN_PICKAXE);
@@ -160,6 +170,46 @@ public class CraftEvent implements Listener {
         diamond_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
         diamond_pickaxe.setItemMeta(diamond_pickaxe_meta);
 
+        ItemStack wooden_shovel = new ItemStack(Material.WOODEN_SHOVEL);
+        ItemMeta wooden_shovel_meta = wooden_shovel.getItemMeta();
+        wooden_shovel_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        wooden_shovel_meta.addEnchant(Enchantment.MENDING, 1, true);
+        wooden_shovel_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        wooden_shovel_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        wooden_shovel.setItemMeta(wooden_shovel_meta);
+
+        ItemStack stone_shovel = new ItemStack(Material.STONE_SHOVEL);
+        ItemMeta stone_shovel_meta = stone_shovel.getItemMeta();
+        stone_shovel_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        stone_shovel_meta.addEnchant(Enchantment.MENDING, 1, true);
+        stone_shovel_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        stone_shovel_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        stone_shovel.setItemMeta(stone_shovel_meta);
+
+        ItemStack iron_shovel = new ItemStack(Material.IRON_SHOVEL);
+        ItemMeta iron_shovel_meta = iron_shovel.getItemMeta();
+        iron_shovel_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        iron_shovel_meta.addEnchant(Enchantment.MENDING, 1, true);
+        iron_shovel_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        iron_shovel_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        iron_shovel.setItemMeta(iron_shovel_meta);
+
+        ItemStack gold_shovel = new ItemStack(Material.GOLDEN_SHOVEL);
+        ItemMeta gold_shovel_meta = gold_shovel.getItemMeta();
+        gold_shovel_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        gold_shovel_meta.addEnchant(Enchantment.MENDING, 1, true);
+        gold_shovel_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        gold_shovel_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        gold_shovel.setItemMeta(gold_shovel_meta);
+
+        ItemStack diamond_shovel = new ItemStack(Material.DIAMOND_SHOVEL);
+        ItemMeta diamond_shovel_meta = diamond_shovel.getItemMeta();
+        diamond_shovel_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        diamond_shovel_meta.addEnchant(Enchantment.MENDING, 1, true);
+        diamond_shovel_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        diamond_shovel_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        diamond_shovel.setItemMeta(diamond_shovel_meta);
+
         if(e.getRecipe() != null && e.getInventory().getResult() != null) {
             if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_SWORD) {
                 e.getInventory().setResult(wooden_sword);
@@ -191,6 +241,16 @@ public class CraftEvent implements Listener {
                 e.getInventory().setResult(gold_pickaxe);
             }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.DIAMOND_PICKAXE) {
                 e.getInventory().setResult(diamond_pickaxe);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.WOODEN_SHOVEL) {
+                e.getInventory().setResult(wooden_shovel);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.STONE_SHOVEL) {
+                e.getInventory().setResult(stone_shovel);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.IRON_SHOVEL) {
+                e.getInventory().setResult(iron_shovel);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.GOLDEN_SHOVEL) {
+                e.getInventory().setResult(gold_shovel);
+            }else if (Objects.requireNonNull(e.getInventory().getResult()).getType() == Material.DIAMOND_SHOVEL) {
+                e.getInventory().setResult(diamond_shovel);
             }
         }
     }

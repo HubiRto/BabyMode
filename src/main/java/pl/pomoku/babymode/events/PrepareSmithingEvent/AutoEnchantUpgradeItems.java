@@ -17,6 +17,7 @@ public class AutoEnchantUpgradeItems implements Listener {
     @EventHandler
     public void SmithingEvent(PrepareSmithingEvent e){
 
+        //SWORD
         ItemStack netherite_sword = new ItemStack(Material.NETHERITE_SWORD);
         ItemMeta netherite_sword_meta = netherite_sword.getItemMeta();
         netherite_sword_meta.addEnchant(Enchantment.FIRE_ASPECT, 2, true);
@@ -27,16 +28,20 @@ public class AutoEnchantUpgradeItems implements Listener {
         netherite_sword_meta.addEnchant(Enchantment.MENDING, 1, true);
         netherite_sword_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         netherite_sword_meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        netherite_sword_meta.addEnchant(Enchantment.SWEEPING_EDGE, 3, true);
         netherite_sword.setItemMeta(netherite_sword_meta);
 
+        //AXE
         ItemStack netherite_axe = new ItemStack(Material.NETHERITE_AXE);
         ItemMeta netherite_axe_meta = netherite_axe.getItemMeta();
         netherite_axe_meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
         netherite_axe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
         netherite_axe_meta.addEnchant(Enchantment.MENDING, 1, true);
         netherite_axe_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        netherite_axe_meta.addEnchant(Enchantment.SILK_TOUCH, 1, true);
         netherite_axe.setItemMeta(netherite_axe_meta);
 
+        //PICKAXE
         ItemStack netherite_pickaxe = new ItemStack(Material.NETHERITE_PICKAXE);
         ItemMeta netherite_pickaxe_meta = netherite_pickaxe.getItemMeta();
         netherite_pickaxe_meta.addEnchant(Enchantment.DURABILITY, 3, true);
@@ -45,6 +50,15 @@ public class AutoEnchantUpgradeItems implements Listener {
         netherite_pickaxe_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 5, true);
         netherite_pickaxe.setItemMeta(netherite_pickaxe_meta);
 
+        //SHOVEL
+        ItemStack netherite_shovel = new ItemStack(Material.NETHERITE_SHOVEL);
+        ItemMeta netherite_shovel_meta = netherite_shovel.getItemMeta();
+        netherite_shovel_meta.addEnchant(Enchantment.DURABILITY, 3, true);
+        netherite_shovel_meta.addEnchant(Enchantment.MENDING, 1, true);
+        netherite_shovel_meta.addEnchant(Enchantment.DIG_SPEED, 5, true);
+        netherite_shovel_meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 3, true);
+        netherite_shovel.setItemMeta(netherite_shovel_meta);
+
         if(e.getResult() != null) {
             if(e.getResult().getType() == Material.NETHERITE_SWORD){
                 e.setResult(netherite_sword);
@@ -52,6 +66,8 @@ public class AutoEnchantUpgradeItems implements Listener {
                 e.setResult(netherite_axe);
             }else if(e.getResult().getType() == Material.NETHERITE_PICKAXE){
                 e.setResult(netherite_pickaxe);
+            }else if(e.getResult().getType() == Material.NETHERITE_SHOVEL){
+                e.setResult(netherite_shovel);
             }
         }
     }
