@@ -1,4 +1,4 @@
-package pl.pomoku.babymode.events.PlayerChangedWorldEvent;
+package pl.pomoku.babymode.events.EntityMoveEvent.PlayerChangedWorldEvent;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

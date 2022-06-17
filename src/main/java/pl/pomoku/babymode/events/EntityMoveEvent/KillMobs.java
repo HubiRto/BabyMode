@@ -57,10 +57,14 @@ public class KillMobs implements Listener {
                         }
                         break;
                     case PHANTOM:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.phantom")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                     case ENDERMAN:
-                        e.getEntity().setHealth(0);
+                        if (plugin.getConfig().getBoolean("kill_mobs.enderman")) {
+                            e.getEntity().setHealth(0);
+                        }
                         break;
                     case WITCH:
                         if (plugin.getConfig().getBoolean("kill_mobs.witch")) {
@@ -77,11 +81,6 @@ public class KillMobs implements Listener {
                             e.getEntity().setHealth(0);
                         }
                         break;
-                    case SHULKER:
-                        if (plugin.getConfig().getBoolean("kill_mobs.shulker")) {
-                            e.getEntity().setHealth(0);
-                        }
-                        break;
                     case ELDER_GUARDIAN:
                         if (plugin.getConfig().getBoolean("kill_mobs.elder_guardian")) {
                             e.getEntity().setHealth(0);
@@ -89,6 +88,71 @@ public class KillMobs implements Listener {
                         break;
                     case GUARDIAN:
                         if (plugin.getConfig().getBoolean("kill_mobs.guardian")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case ENDERMITE:
+                        if (plugin.getConfig().getBoolean("kill_mobs.endermite")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case ZOGLIN:
+                        if (plugin.getConfig().getBoolean("kill_mobs.zoglin")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case PIGLIN_BRUTE:
+                        if (plugin.getConfig().getBoolean("kill_mobs.piglin_brute")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case VEX:
+                        if (plugin.getConfig().getBoolean("kill_mobs.vex")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case RAVAGER:
+                        if (plugin.getConfig().getBoolean("kill_mobs.ravager")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case PILLAGER:
+                        if (plugin.getConfig().getBoolean("kill_mobs.pillager")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case EVOKER:
+                        if (plugin.getConfig().getBoolean("kill_mobs.evoker")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case VINDICATOR:
+                        if (plugin.getConfig().getBoolean("kill_mobs.vindicator")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case WITHER_SKELETON:
+                        if (plugin.getConfig().getBoolean("kill_mobs.wither_skeleton")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case SILVERFISH:
+                        if (plugin.getConfig().getBoolean("kill_mobs.silverfish")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case MAGMA_CUBE:
+                        if (plugin.getConfig().getBoolean("kill_mobs.magma_cube")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case GHAST:
+                        if (plugin.getConfig().getBoolean("kill_mobs.ghast")) {
+                            e.getEntity().setHealth(0);
+                        }
+                        break;
+                    case BLAZE:
+                        if (plugin.getConfig().getBoolean("kill_mobs.blaze")) {
                             e.getEntity().setHealth(0);
                         }
                         break;

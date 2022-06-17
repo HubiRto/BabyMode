@@ -13,7 +13,7 @@ import pl.pomoku.babymode.events.EntityDeathEvent.RespawnAnimals;
 import pl.pomoku.babymode.events.EntityExplodeEvent.BlockExlodeOfCreeper;
 import pl.pomoku.babymode.events.EntityMoveEvent.KillMobs;
 import pl.pomoku.babymode.events.EntityTeleportEvent.BlockEndermans;
-import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnNether;
+import pl.pomoku.babymode.events.EntityMoveEvent.PlayerChangedWorldEvent.JoinOnNether;
 import pl.pomoku.babymode.events.PlayerJoinEvent.OnJoin;
 import pl.pomoku.babymode.events.PlayerMoveEvent.CreatingObsidianInsteadOfLava;
 import pl.pomoku.babymode.events.PrepareItemCraftEvent.CraftEvent;
@@ -25,6 +25,8 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         main = this;
+
+        Recipe.createPortal();
 
         new BabyModeOnOffCommand(this);
         new BabyModeCommandCompleter(this);

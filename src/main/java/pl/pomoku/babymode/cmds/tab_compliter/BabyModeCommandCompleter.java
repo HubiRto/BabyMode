@@ -30,6 +30,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("all");
                 arguments.add("extinguishing");
                 arguments.add("alldamage");
+                arguments.add("crate_portal");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {
@@ -50,13 +51,11 @@ public class BabyModeCommandCompleter implements TabCompleter {
                             arguments.add("drowned");
                             arguments.add("stray");
                             arguments.add("husk");
-                            arguments.add("shulker");
                             arguments.add("elder_guardian");
                             arguments.add("guardian");
                             arguments.add("endermite");
                             arguments.add("zoglin");
                             arguments.add("piglin_brute");
-                            arguments.add("evocation_fang");
                             arguments.add("vex");
                             arguments.add("pillager");
                             arguments.add("ravager");
@@ -67,6 +66,8 @@ public class BabyModeCommandCompleter implements TabCompleter {
                             arguments.add("magma_cube");
                             arguments.add("ghast");
                             arguments.add("blaze");
+                            arguments.add("phantom");
+                            arguments.add("enderman");
                             return arguments;
                         }else {
                             List<String> arguments = new ArrayList<>();
@@ -91,13 +92,11 @@ public class BabyModeCommandCompleter implements TabCompleter {
                         case "drowned":
                         case "stray":
                         case "husk":
-                        case "shulker":
                         case "elder_guardian":
                         case "guardian":
                         case "endermite":
                         case "zoglin":
                         case "piglin_brute":
-                        case "evocation_fang":
                         case "vex":
                         case "ravager":
                         case "pillager":
@@ -107,6 +106,8 @@ public class BabyModeCommandCompleter implements TabCompleter {
                         case "silverfish":
                         case "magma_cube":
                         case "ghast":
+                        case "phantom":
+                        case "enderman":
                         case "blaze": {
                             return getStrings();
                         }

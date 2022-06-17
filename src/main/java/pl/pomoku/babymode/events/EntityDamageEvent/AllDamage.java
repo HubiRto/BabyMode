@@ -1,5 +1,6 @@
 package pl.pomoku.babymode.events.EntityDamageEvent;
 
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -15,7 +16,9 @@ public class AllDamage implements Listener {
     public void AllDamagee(EntityDamageEvent e){
         if(plugin.getConfig().getBoolean("babymode")) {
             if(plugin.getConfig().getBoolean("alldamage")) {
-                e.setCancelled(true);
+                if(e.getEntity().getType() == EntityType.PLAYER) {
+                    e.setCancelled(true);
+                }
             }
         }
     }

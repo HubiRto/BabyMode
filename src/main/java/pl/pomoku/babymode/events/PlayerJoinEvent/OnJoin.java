@@ -16,6 +16,7 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("babymode", false);
         plugin.getConfig().set("extinguishing", false);
         plugin.getConfig().set("alldamage", false);
+        plugin.getConfig().set("crate_portal", false);
 
         plugin.getConfig().set("kill_mobs.mode", false);
         plugin.getConfig().set("kill_mobs.zombie", false);
@@ -29,13 +30,12 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("kill_mobs.drowned", false);
         plugin.getConfig().set("kill_mobs.stray", false);
         plugin.getConfig().set("kill_mobs.husk", false);
-        plugin.getConfig().set("kill_mobs.shulker", false);
         plugin.getConfig().set("kill_mobs.elder_guardian", false);
         plugin.getConfig().set("kill_mobs.guardian", false);
         plugin.getConfig().set("kill_mobs.endermite", false);
+        plugin.getConfig().set("kill_mobs.enderman", false);
         plugin.getConfig().set("kill_mobs.zoglin", false);
         plugin.getConfig().set("kill_mobs.piglin_brute", false);
-        plugin.getConfig().set("kill_mobs.evocation_fang", false);
         plugin.getConfig().set("kill_mobs.vex", false);
         plugin.getConfig().set("kill_mobs.ravager", false);
         plugin.getConfig().set("kill_mobs.pillager", false);
@@ -46,6 +46,7 @@ public class OnJoin implements Listener {
         plugin.getConfig().set("kill_mobs.magma_cube", false);
         plugin.getConfig().set("kill_mobs.ghast", false);
         plugin.getConfig().set("kill_mobs.blaze", false);
+        plugin.getConfig().set("kill_mobs.phantom", false);
 
         plugin.saveConfig();
     }
