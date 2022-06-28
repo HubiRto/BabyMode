@@ -115,6 +115,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("kill_mobs.hoglin", true);
                             plugin.getConfig().set("kill_mobs.piglin", true);
                             plugin.getConfig().set("kill_mobs.zombified_piglin", true);
+                            plugin.getConfig().set("kill_mobs.shulker", true);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
                         } else if (args[1].equals("off")) {
@@ -164,6 +165,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("kill_mobs.hoglin", false);
                             plugin.getConfig().set("kill_mobs.piglin", false);
                             plugin.getConfig().set("kill_mobs.zombified_piglin", false);
+                            plugin.getConfig().set("kill_mobs.shulker", false);
 
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Wszystkie opcje");
@@ -385,6 +387,9 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                                 break;
                             case "zombified_piglin":
                                 extracted(args, p, "kill_mobs.zombified_piglin", "Zombified Piglin");
+                                break;
+                            case "shulker":
+                                extracted(args, p, "kill_mobs.shulker", "Shulker");
                                 break;
                         }
                     }

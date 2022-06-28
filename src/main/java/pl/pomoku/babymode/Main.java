@@ -1,10 +1,7 @@
 package pl.pomoku.babymode;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Creeper;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Skeleton;
-import org.bukkit.entity.Zombie;
+import org.bukkit.entity.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
@@ -17,10 +14,8 @@ import pl.pomoku.babymode.events.EntityDamageEvent.ExtinguishingThePlayer;
 import pl.pomoku.babymode.events.EntityDeathEvent.IncreasingDropItemsFromMobs;
 import pl.pomoku.babymode.events.EntityDeathEvent.RespawnAnimals;
 import pl.pomoku.babymode.events.EntityExplodeEvent.BlockExlodeOfCreeper;
-import pl.pomoku.babymode.events.EntityMoveEvent.KillMobs;
 import pl.pomoku.babymode.events.EntityTeleportEvent.BlockEndermans;
 import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnNether;
-import pl.pomoku.babymode.events.PlayerJoinEvent.OnJoin;
 import pl.pomoku.babymode.events.PlayerMoveEvent.CreatingObsidianInsteadOfLava;
 import pl.pomoku.babymode.events.PrepareItemCraftEvent.CraftEvent;
 import pl.pomoku.babymode.events.PrepareSmithingEvent.AutoEnchantUpgradeItems;
@@ -31,8 +26,6 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         main = this;
-
-        new Run(this);
 
         //Recipes
         Recipe.createPortal();
@@ -51,13 +44,11 @@ public final class Main extends JavaPlugin {
     }
 
     private void RegisterEvents() {
-        getServer().getPluginManager().registerEvents(new OnJoin(this), this);
         getServer().getPluginManager().registerEvents(new RespawnAnimals(this), this);
         getServer().getPluginManager().registerEvents(new CreatingObsidianInsteadOfLava(this), this);
         getServer().getPluginManager().registerEvents(new ExtinguishingThePlayer(this), this);
         getServer().getPluginManager().registerEvents(new AutoBurningAnimals(this), this);
         getServer().getPluginManager().registerEvents(new AutoCreatePortal(this), this);
-        getServer().getPluginManager().registerEvents(new KillMobs(this), this);
         getServer().getPluginManager().registerEvents(new BlockExlodeOfCreeper(this), this);
         getServer().getPluginManager().registerEvents(new BlockEndermans(this), this);
         getServer().getPluginManager().registerEvents(new IncreasingDropItemsFromMobs(this), this);
@@ -66,18 +57,19 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockItemsBurning(this), this);
         getServer().getPluginManager().registerEvents(new AutoEnchantUpgradeItems(this), this);
         getServer().getPluginManager().registerEvents(new AllDamage(this), this);
-        getServer().getPluginManager().registerEvents(new New(this), this);
     }
 
     private void KillMobss() {
         BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this, () -> {
-            Bukkit.getOnlinePlayers().forEach(p -> {
-                p.getNearbyEntities(30.0D, 30.0D, 30.0D).forEach((e) -> {
+        scheduler.scheduleSyncRepeatingTask(this, () ->
+                Bukkit.getOnlinePlayers().forEach(p ->
+                        p.getNearbyEntities(30.0D, 30.0D, 30.0D).forEach((e) -> {
+            if(getConfig().getBoolean("babymode")) {
+                if (getConfig().getBoolean("kill_mobs.mode")) {
                     KillMobsSystem(e);
-                });
-            });
-        }, 0L, 1L);
+                }
+            }
+        })), 0L, 1L);
     }
 
     private void KillMobsSystem(Entity e) {
@@ -102,170 +94,176 @@ public final class Main extends JavaPlugin {
                 break;
             case SLIME:
                 if (getConfig().getBoolean("kill_mobs.slime")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Slime;
+                    ((Slime) e).setHealth(0);
                 }
                 break;
             case SPIDER:
                 if (getConfig().getBoolean("kill_mobs.spider")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Spider;
+                    ((Spider) e).setHealth(0);
                 }
                 break;
             case DROWNED:
                 if (getConfig().getBoolean("kill_mobs.drowned")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Drowned;
+                    ((Drowned) e).setHealth(0);
                 }
                 break;
             case STRAY:
                 if (getConfig().getBoolean("kill_mobs.stray")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Stray;
+                    ((Stray) e).setHealth(0);
                 }
                 break;
             case HUSK:
                 if (getConfig().getBoolean("kill_mobs.husk")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Husk;
+                    ((Husk) e).setHealth(0);
                 }
                 break;
             case PHANTOM:
                 if (getConfig().getBoolean("kill_mobs.phantom")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Phantom;
+                    ((Phantom) e).setHealth(0);
                 }
                 break;
             case ENDERMAN:
                 if (getConfig().getBoolean("kill_mobs.enderman")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Enderman;
+                    ((Enderman) e).setHealth(0);
                 }
                 break;
             case WITCH:
                 if (getConfig().getBoolean("kill_mobs.witch")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Witch;
+                    ((Witch) e).setHealth(0);
                 }
                 break;
             case CAVE_SPIDER:
                 if (getConfig().getBoolean("kill_mobs.cave_spider")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof CaveSpider;
+                    ((CaveSpider) e).setHealth(0);
                 }
                 break;
             case ZOMBIE_VILLAGER:
                 if (getConfig().getBoolean("kill_mobs.zombie_villager")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof ZombieVillager;
+                    ((ZombieVillager) e).setHealth(0);
                 }
                 break;
             case ELDER_GUARDIAN:
                 if (getConfig().getBoolean("kill_mobs.elder_guardian")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof ElderGuardian;
+                    ((ElderGuardian) e).setHealth(0);
                 }
                 break;
             case GUARDIAN:
                 if (getConfig().getBoolean("kill_mobs.guardian")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Guardian;
+                    ((Guardian) e).setHealth(0);
                 }
                 break;
             case ENDERMITE:
                 if (getConfig().getBoolean("kill_mobs.endermite")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Endermite;
+                    ((Endermite) e).setHealth(0);
                 }
                 break;
             case ZOGLIN:
                 if (getConfig().getBoolean("kill_mobs.zoglin")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Zoglin;
+                    ((Zoglin) e).setHealth(0);
                 }
                 break;
             case PIGLIN_BRUTE:
                 if (getConfig().getBoolean("kill_mobs.piglin_brute")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof PiglinBrute;
+                    ((PiglinBrute) e).setHealth(0);
                 }
                 break;
             case VEX:
                 if (getConfig().getBoolean("kill_mobs.vex")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Vex;
+                    ((Vex) e).setHealth(0);
                 }
                 break;
             case RAVAGER:
                 if (getConfig().getBoolean("kill_mobs.ravager")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Ravager;
+                    ((Ravager) e).setHealth(0);
                 }
                 break;
             case PILLAGER:
                 if (getConfig().getBoolean("kill_mobs.pillager")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Pillager;
+                    ((Pillager) e).setHealth(0);
                 }
                 break;
             case EVOKER:
                 if (getConfig().getBoolean("kill_mobs.evoker")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Evoker;
+                    ((Evoker) e).setHealth(0);
                 }
                 break;
             case VINDICATOR:
                 if (getConfig().getBoolean("kill_mobs.vindicator")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Vindicator;
+                    ((Vindicator) e).setHealth(0);
                 }
                 break;
             case WITHER_SKELETON:
                 if (getConfig().getBoolean("kill_mobs.wither_skeleton")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof WitherSkeleton;
+                    ((WitherSkeleton) e).setHealth(0);
                 }
                 break;
             case SILVERFISH:
                 if (getConfig().getBoolean("kill_mobs.silverfish")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Silverfish;
+                    ((Silverfish) e).setHealth(0);
                 }
                 break;
             case MAGMA_CUBE:
                 if (getConfig().getBoolean("kill_mobs.magma_cube")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof MagmaCube;
+                    ((MagmaCube) e).setHealth(0);
                 }
                 break;
             case GHAST:
                 if (getConfig().getBoolean("kill_mobs.ghast")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Ghast;
+                    ((Ghast) e).setHealth(0);
                 }
                 break;
             case BLAZE:
                 if (getConfig().getBoolean("kill_mobs.blaze")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Blaze;
+                    ((Blaze) e).setHealth(0);
                 }
                 break;
             case PIGLIN:
                 if (getConfig().getBoolean("kill_mobs.piglin")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Piglin;
+                    ((Piglin) e).setHealth(0);
                 }
                 break;
             case HOGLIN:
                 if (getConfig().getBoolean("kill_mobs.hoglin")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof Hoglin;
+                    ((Hoglin) e).setHealth(0);
                 }
                 break;
             case ZOMBIFIED_PIGLIN:
                 if (getConfig().getBoolean("kill_mobs.zombified_piglin")) {
-                    assert e instanceof Skeleton;
-                    ((Skeleton) e).setHealth(0);
+                    assert e instanceof PigZombie;
+                    ((PigZombie) e).setHealth(0);
+                }
+                break;
+            case SHULKER:
+                if (getConfig().getBoolean("kill_mobs.shulker")) {
+                    assert e instanceof Shulker;
+                    ((Shulker) e).setHealth(0);
                 }
                 break;
         }

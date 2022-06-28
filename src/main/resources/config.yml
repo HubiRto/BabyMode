@@ -1,0 +1,47 @@
+babymode: true
+extinguishing: true
+alldamage: true
+crate_portal: true
+auto_enchant: true
+block_explode: true
+block_item_burn: true
+make_obs: true
+more_loot: true
+respawn_animals: true
+block_enderman: true
+join_nether: true
+auto_cook: true
+kill_mobs:
+  mode: true
+  zombie: true
+  skeleton: true
+  slime: true
+  spider: true
+  cave_spider: true
+  creeper: true
+  zombie_villager: true
+  witch: true
+  drowned: true
+  stray: true
+  husk: true
+  elder_guardian: true
+  guardian: true
+  endermite: true
+  enderman: true
+  zoglin: true
+  piglin_brute: true
+  vex: true
+  ravager: true
+  pillager: true
+  evoker: true
+  vindicator: true
+  wither_skeleton: true
+  silverfish: true
+  magma_cube: true
+  ghast: true
+  blaze: true
+  phantom: true
+  hoglin: true
+  piglin: true
+  zombified_piglin: true
+  shulker: true
