@@ -1,7 +1,10 @@
 package pl.pomoku.babymode;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.*;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
@@ -41,6 +44,7 @@ public final class Main extends JavaPlugin {
         //LoadVoids
         KillMobss();
         RegisterEvents();
+        AddBoat();
     }
 
     private void RegisterEvents() {
@@ -70,6 +74,35 @@ public final class Main extends JavaPlugin {
                 }
             }
         })), 0L, 1L);
+    }
+    private void AddBoat() {
+        BukkitScheduler scheduler = getServer().getScheduler();
+        scheduler.scheduleSyncRepeatingTask(this, () -> Bukkit.getOnlinePlayers().forEach(p -> {
+            Location l = p.getLocation();
+            if(l.getBlock().isLiquid()){
+                if(!HaveBoat(p)){
+                    p.getInventory().addItem(new ItemStack(Material.OAK_BOAT));
+                }
+            }
+        }), 0L, 1L);
+    }
+
+    private boolean HaveBoat(Player p) {
+        boolean have_boat = false;
+        p.getInventory().getContents();
+        for (ItemStack is : p.getInventory().getStorageContents()) {
+            if(is != null) {
+                if (is.getType() == Material.ACACIA_BOAT
+                        || is.getType() == Material.OAK_BOAT
+                        || is.getType() == Material.BIRCH_BOAT
+                        || is.getType() == Material.DARK_OAK_BOAT
+                        || is.getType() == Material.JUNGLE_BOAT
+                        || is.getType() == Material.SPRUCE_BOAT) {
+                    have_boat = true;
+                }
+            }
+        }
+        return have_boat;
     }
 
     private void KillMobsSystem(Entity e) {

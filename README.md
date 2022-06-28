@@ -9,5 +9,5 @@ Jest to tryb, który powoduje, że rozgrywka staje się bardzo prosta i przyjemn
 - Wszystkie przedmioty po utworzeniu są automatycznie zaklinane
 - Zablokowanie obrażeń od upadku
 - Zablokowanie obrażeń od topienia się
-- Zablokowanie obrażeń od związanych z podpaleniem
+- Zablokowanie obrażeń od podpalenia
 - 
