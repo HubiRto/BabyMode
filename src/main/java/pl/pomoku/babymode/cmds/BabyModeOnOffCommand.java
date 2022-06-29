@@ -43,6 +43,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" §8>> §e/bm §fblock_enderman §8[§aon§7/§coff§8] §7- blokowanie endermanow.");
                     p.sendMessage(" §8>> §e/bm §fjoin_nether §8[§aon§7/§coff§8] §7- starpack w netherze.");
                     p.sendMessage(" §8>> §e/bm §fswim §8[§aon§7/§coff§8] §7- pomoc przy plywaniu.");
+                    p.sendMessage(" §8>> §e/bm §fstone_drop §8[§aon§7/§coff§8] §7- drop z kamienia.");
                     p.sendMessage(" ");
                     p.sendMessage("§8[§b+§8]§m------------§r§8[ §bBABY MODE §8]§m------------§r§8[§b+§8]");
                     p.sendMessage(" ");
@@ -85,6 +86,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_enderman", true);
                             plugin.getConfig().set("join_nether", true);
                             plugin.getConfig().set("swim", true);
+                            plugin.getConfig().set("stone_drop", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -136,6 +138,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_enderman", false);
                             plugin.getConfig().set("join_nether", false);
                             plugin.getConfig().set("swim", false);
+                            plugin.getConfig().set("stone_drop", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -303,6 +306,16 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("swim", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Pomoc przy plywaniu");
+                        }
+                    }else if (args[0].equals("stone_drop")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("stone_drop", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Drop z kamienia");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("stone_drop", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Drop z kamienia");
                         }
                     }
                     break;

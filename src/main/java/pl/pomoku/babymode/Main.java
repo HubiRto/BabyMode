@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
 import pl.pomoku.babymode.cmds.tab_compliter.BabyModeCommandCompleter;
+import pl.pomoku.babymode.events.BlockBreakBlockEvent.DropFromStone;
 import pl.pomoku.babymode.events.BlockPlaceEvent.AutoCreatePortal;
 import pl.pomoku.babymode.events.EntityDamageByEntityEvent.AutoBurningAnimals;
 import pl.pomoku.babymode.events.EntityDamageEvent.AllDamage;
@@ -61,6 +62,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockItemsBurning(this), this);
         getServer().getPluginManager().registerEvents(new AutoEnchantUpgradeItems(this), this);
         getServer().getPluginManager().registerEvents(new AllDamage(this), this);
+        getServer().getPluginManager().registerEvents(new DropFromStone(this), this);
     }
 
     private void Runnable() {

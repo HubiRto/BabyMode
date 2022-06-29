@@ -12,6 +12,7 @@ block_enderman: true
 join_nether: true
 auto_cook: true
 swim: true
+stone_drop: true
 kill_mobs:
   mode: true
   zombie: true
