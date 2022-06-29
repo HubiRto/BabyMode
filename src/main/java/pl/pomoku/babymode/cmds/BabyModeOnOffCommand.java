@@ -47,6 +47,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" §8>> §e/bm §fblock_bad_effect §8[§aon§7/§coff§8] §7- usuwanie zatrucia.");
                     p.sendMessage(" §8>> §e/bm §fenderman_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu perl.");
                     p.sendMessage(" §8>> §e/bm §fblaze_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu blaze rodow.");
+                    p.sendMessage(" §8>> §e/bm §fwither_skeleton_drop §8[§aon§7/§coff§8] §7- +drop wither czaszek.");
                     p.sendMessage(" ");
                     p.sendMessage("§8[§b+§8]§m------------§r§8[ §bBABY MODE §8]§m------------§r§8[§b+§8]");
                     p.sendMessage(" ");
@@ -93,6 +94,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_bad_effect", true);
                             plugin.getConfig().set("enderman_drop", true);
                             plugin.getConfig().set("blaze_drop", true);
+                            plugin.getConfig().set("wither_skeleton_drop", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -148,6 +150,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("block_bad_effect", false);
                             plugin.getConfig().set("enderman_drop", false);
                             plugin.getConfig().set("blaze_drop", false);
+                            plugin.getConfig().set("wither_skeleton_drop", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -355,6 +358,16 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("blaze_drop", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Dodawnie do dropu 12x BlazeRod");
+                        }
+                    }else if (args[0].equals("wither_skeleton_drop")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("wither_skeleton_drop", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Dodawnie do dropu 3x WitherSkeletonSkull");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("wither_skeleton_drop", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Dodawnie do dropu 3x WitherSkeletonSkull");
                         }
                     }
                     break;
