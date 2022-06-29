@@ -1,11 +1,14 @@
 package pl.pomoku.babymode;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitScheduler;
 import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
 import pl.pomoku.babymode.cmds.tab_compliter.BabyModeCommandCompleter;
@@ -23,6 +26,8 @@ import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnNether;
 import pl.pomoku.babymode.events.PlayerMoveEvent.CreatingObsidianInsteadOfLava;
 import pl.pomoku.babymode.events.PrepareItemCraftEvent.CraftEvent;
 import pl.pomoku.babymode.events.PrepareSmithingEvent.AutoEnchantUpgradeItems;
+
+import java.util.Collection;
 
 public final class Main extends JavaPlugin {
 
@@ -80,12 +85,16 @@ public final class Main extends JavaPlugin {
                 if (getConfig().getBoolean("swim")) {
                     Location l = p.getLocation();
                     if (l.getBlock().isLiquid()) {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.DOLPHINS_GRACE, 2000, 2));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 2000, 2));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 2000, 2));
                         if (!HaveBoat(p)) {
                             p.getInventory().addItem(new ItemStack(Material.OAK_BOAT));
                         }
                     }
                 }
             }
+            
         }), 0L, 2L);
     }
 
