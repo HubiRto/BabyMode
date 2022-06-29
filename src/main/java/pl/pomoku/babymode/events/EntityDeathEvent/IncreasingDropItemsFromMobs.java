@@ -1,6 +1,7 @@
 package pl.pomoku.babymode.events.EntityDeathEvent;
 
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Animals;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,11 +20,13 @@ public class IncreasingDropItemsFromMobs implements Listener {
     public void EntitiDiead(EntityDeathEvent e){
         if(plugin.getConfig().getBoolean("babymode")) {
             if(plugin.getConfig().getBoolean("more_loot")) {
-                List<ItemStack> items = e.getDrops();
-                for (ItemStack item : items) {
-                    int b = (item.getAmount()) * 3;
-                    item.setAmount(b);
+                if(e.getEntity() instanceof Animals) {
+                    List<ItemStack> items = e.getDrops();
+                    for (ItemStack item : items) {
+                        int b = (item.getAmount()) * 2;
+                        item.setAmount(b);
 
+                    }
                 }
             }
         }
