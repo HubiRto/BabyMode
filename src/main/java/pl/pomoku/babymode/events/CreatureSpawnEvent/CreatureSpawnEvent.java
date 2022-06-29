@@ -12,7 +12,7 @@ public class CreatureSpawnEvent implements Listener {
     }
     @EventHandler
     public void KillDragon(org.bukkit.event.entity.CreatureSpawnEvent e){
-        if(plugin.getConfig().getBoolean("babymode")) {
+        if (plugin.getConfig().getBoolean("babymode")) {
             if (plugin.getConfig().getBoolean("kill_ender_dragon")) {
                 if (e.getEntity().getType() == EntityType.ENDER_DRAGON) {
                     e.getEntity().setHealth(0);
