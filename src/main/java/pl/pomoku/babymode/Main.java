@@ -69,6 +69,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AllDamage(this), this);
         getServer().getPluginManager().registerEvents(new DropFromStone(this), this);
         getServer().getPluginManager().registerEvents(new pl.pomoku.babymode.events.EntityDeathEvent.Enderman(this), this);
+        getServer().getPluginManager().registerEvents(new pl.pomoku.babymode.events.EntityDeathEvent.Blaze(this), this);
     }
 
     private void Runnable() {

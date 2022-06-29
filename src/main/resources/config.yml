@@ -15,6 +15,7 @@ swim: true
 stone_drop: true
 block_bad_effect: true
 enderman_drop: true
+blaze_drop: true
 kill_mobs:
   mode: true
   zombie: true
