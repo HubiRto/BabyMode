@@ -43,6 +43,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("swim");
                 arguments.add("stone_drop");
                 arguments.add("block_bad_effect");
+                arguments.add("enderman_drop");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {
