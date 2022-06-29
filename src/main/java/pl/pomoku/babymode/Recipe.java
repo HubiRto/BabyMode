@@ -6,16 +6,12 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class Recipe {
     public static ItemStack obs;
 
-    public static void init(){
-        createPortal();
-    }
     public static void createPortal(){
         ItemStack is = new ItemStack(Material.OBSIDIAN);
         ItemMeta im = is.getItemMeta();

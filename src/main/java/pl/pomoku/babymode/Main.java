@@ -26,6 +26,7 @@ import pl.pomoku.babymode.events.PrepareSmithingEvent.AutoEnchantUpgradeItems;
 public final class Main extends JavaPlugin {
 
     public static Main main;
+
     @Override
     public void onEnable() {
         main = this;
@@ -42,9 +43,8 @@ public final class Main extends JavaPlugin {
         saveConfig();
 
         //LoadVoids
-        KillMobss();
+        Runnable();
         RegisterEvents();
-        AddBoat();
     }
 
     private void RegisterEvents() {
@@ -63,35 +63,35 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AllDamage(this), this);
     }
 
-    private void KillMobss() {
-        BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this, () ->
-                Bukkit.getOnlinePlayers().forEach(p ->
-                        p.getNearbyEntities(30.0D, 30.0D, 30.0D).forEach((e) -> {
-            if(getConfig().getBoolean("babymode")) {
-                if (getConfig().getBoolean("kill_mobs.mode")) {
-                    KillMobsSystem(e);
-                }
-            }
-        })), 0L, 1L);
-    }
-    private void AddBoat() {
+    private void Runnable() {
         BukkitScheduler scheduler = getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(this, () -> Bukkit.getOnlinePlayers().forEach(p -> {
-            Location l = p.getLocation();
-            if(l.getBlock().isLiquid()){
-                if(!HaveBoat(p)){
-                    p.getInventory().addItem(new ItemStack(Material.OAK_BOAT));
+            p.getNearbyEntities(30.0D, 30.0D, 30.0D).forEach((e) -> {
+                        if (getConfig().getBoolean("babymode")) {
+                            if (getConfig().getBoolean("kill_mobs.mode")) {
+                                KillMobsSystem(e);
+                            }
+                        }
+                    }
+            );
+            if (getConfig().getBoolean("babymode")) {
+                if (getConfig().getBoolean("swim")) {
+                    Location l = p.getLocation();
+                    if (l.getBlock().isLiquid()) {
+                        if (!HaveBoat(p)) {
+                            p.getInventory().addItem(new ItemStack(Material.OAK_BOAT));
+                        }
+                    }
                 }
             }
-        }), 0L, 1L);
+        }), 0L, 2L);
     }
 
     private boolean HaveBoat(Player p) {
         boolean have_boat = false;
         p.getInventory().getContents();
         for (ItemStack is : p.getInventory().getStorageContents()) {
-            if(is != null) {
+            if (is != null) {
                 if (is.getType() == Material.ACACIA_BOAT
                         || is.getType() == Material.OAK_BOAT
                         || is.getType() == Material.BIRCH_BOAT
