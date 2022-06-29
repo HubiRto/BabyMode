@@ -46,6 +46,8 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("enderman_drop");
                 arguments.add("blaze_drop");
                 arguments.add("wither_skeleton_drop");
+                arguments.add("join_the_end");
+                arguments.add("kill_ender_dragon");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {

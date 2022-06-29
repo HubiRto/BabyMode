@@ -48,6 +48,8 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" §8>> §e/bm §fenderman_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu perl.");
                     p.sendMessage(" §8>> §e/bm §fblaze_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu blaze rodow.");
                     p.sendMessage(" §8>> §e/bm §fwither_skeleton_drop §8[§aon§7/§coff§8] §7- +drop wither czaszek.");
+                    p.sendMessage(" §8>> §e/bm §fjoin_the_end §8[§aon§7/§coff§8] §7- pomoc w endzie.");
+                    p.sendMessage(" §8>> §e/bm §fkill_ender_dragon §8[§aon§7/§coff§8] §7- zabijanie Smoka.");
                     p.sendMessage(" ");
                     p.sendMessage("§8[§b+§8]§m------------§r§8[ §bBABY MODE §8]§m------------§r§8[§b+§8]");
                     p.sendMessage(" ");
@@ -95,6 +97,8 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("enderman_drop", true);
                             plugin.getConfig().set("blaze_drop", true);
                             plugin.getConfig().set("wither_skeleton_drop", true);
+                            plugin.getConfig().set("join_the_end", true);
+                            plugin.getConfig().set("kill_ender_dragon", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -151,6 +155,8 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("enderman_drop", false);
                             plugin.getConfig().set("blaze_drop", false);
                             plugin.getConfig().set("wither_skeleton_drop", false);
+                            plugin.getConfig().set("join_the_end", false);
+                            plugin.getConfig().set("kill_ender_dragon", false);
 
                             plugin.getConfig().set("kill_mobs.mode", false);
                             plugin.getConfig().set("kill_mobs.zombie", false);
@@ -368,6 +374,26 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("wither_skeleton_drop", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Dodawnie do dropu 3x WitherSkeletonSkull");
+                        }
+                    }else if (args[0].equals("join_the_end")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("join_the_end", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Pomoc w swiecie The End");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("join_the_end", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Pomoc w swiecie The End");
+                        }
+                    }else if (args[0].equals("kill_ender_dragon")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("kill_ender_dragon", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Smoka Endu");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("kill_ender_dragon", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Smoka Endu");
                         }
                     }
                     break;

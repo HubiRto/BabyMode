@@ -1,7 +1,6 @@
 package pl.pomoku.babymode.events.PlayerChangedWorldEvent;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,12 +19,12 @@ public class JoinOnNether implements Listener {
         if(plugin.getConfig().getBoolean("babymode")) {
             if(plugin.getConfig().getBoolean("join_nether")) {
                 if (p.getWorld().getName().equals("world_nether")) {
-                    //if (!p.hasPlayedBefore()) {
+                    if (!p.hasPlayedBefore()) {
                         p.sendMessage(ChatColor.WHITE + "<" + ChatColor.GOLD + "GOD" + ChatColor.WHITE + ">" + ChatColor.GRAY + "Dalem ci maly upominek, zeby nie musial/a sie meczyc!");
                         p.getInventory().addItem(new ItemStack(Material.ENDER_EYE, 16));
                         p.getInventory().addItem(new ItemStack(Material.ENDER_PEARL, 16));
                         p.getInventory().addItem(new ItemStack(Material.BLAZE_ROD, 16));
-                    //}
+                    }
                 }
             }
         }

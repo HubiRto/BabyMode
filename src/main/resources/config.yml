@@ -17,6 +17,8 @@ block_bad_effect: true
 enderman_drop: true
 blaze_drop: true
 wither_skeleton_drop: true
+join_the_end: true
+kill_ender_dragon: true
 kill_mobs:
   mode: true
   zombie: true

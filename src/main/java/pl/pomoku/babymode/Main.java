@@ -14,6 +14,7 @@ import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
 import pl.pomoku.babymode.cmds.tab_compliter.BabyModeCommandCompleter;
 import pl.pomoku.babymode.events.BlockBreakBlockEvent.DropFromStone;
 import pl.pomoku.babymode.events.BlockPlaceEvent.AutoCreatePortal;
+import pl.pomoku.babymode.events.CreatureSpawnEvent.CreatureSpawnEvent;
 import pl.pomoku.babymode.events.EntityDamageByEntityEvent.AutoBurningAnimals;
 import pl.pomoku.babymode.events.EntityDamageEvent.AllDamage;
 import pl.pomoku.babymode.events.EntityDamageEvent.BlockItemsBurning;
@@ -23,6 +24,7 @@ import pl.pomoku.babymode.events.EntityDeathEvent.RespawnAnimals;
 import pl.pomoku.babymode.events.EntityExplodeEvent.BlockExlodeOfCreeper;
 import pl.pomoku.babymode.events.EntityTeleportEvent.BlockEndermans;
 import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnNether;
+import pl.pomoku.babymode.events.PlayerChangedWorldEvent.JoinOnTheEnd;
 import pl.pomoku.babymode.events.PlayerMoveEvent.CreatingObsidianInsteadOfLava;
 import pl.pomoku.babymode.events.PrepareItemCraftEvent.CraftEvent;
 import pl.pomoku.babymode.events.PrepareSmithingEvent.AutoEnchantUpgradeItems;
@@ -71,6 +73,8 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new pl.pomoku.babymode.events.EntityDeathEvent.Enderman(this), this);
         getServer().getPluginManager().registerEvents(new pl.pomoku.babymode.events.EntityDeathEvent.Blaze(this), this);
         getServer().getPluginManager().registerEvents(new pl.pomoku.babymode.events.EntityDeathEvent.WitherSkeleton(this), this);
+        getServer().getPluginManager().registerEvents(new CreatureSpawnEvent(this), this);
+        getServer().getPluginManager().registerEvents(new JoinOnTheEnd(this), this);
     }
 
     private void Runnable() {
