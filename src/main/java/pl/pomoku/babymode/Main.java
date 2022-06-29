@@ -94,8 +94,22 @@ public final class Main extends JavaPlugin {
                     }
                 }
             }
-            
+            if (getConfig().getBoolean("babymode")) {
+                if (getConfig().getBoolean("block_bad_effect")) {
+                    for(PotionEffect effects: p.getActivePotionEffects()){
+                        for(NegativeEffects bad: NegativeEffects.values()){
+                            if(effects.getType().getName().equalsIgnoreCase(bad.name())){
+                                p.removePotionEffect(effects.getType());
+                            }
+                        }
+                    }
+                }
+            }
         }), 0L, 2L);
+    }
+
+    public enum NegativeEffects{
+        CONFUSION, HARM, HUNGER,POISON, SLOW_DIGGING, SLOW, WEAKNESS, WITHER;
     }
 
     private boolean HaveBoat(Player p) {

@@ -13,6 +13,7 @@ join_nether: true
 auto_cook: true
 swim: true
 stone_drop: true
+block_bad_effect: true
 kill_mobs:
   mode: true
   zombie: true

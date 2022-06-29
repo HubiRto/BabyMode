@@ -42,6 +42,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("join_nether");
                 arguments.add("swim");
                 arguments.add("stone_drop");
+                arguments.add("block_bad_effect");
                 return arguments;
             }else if(args.length == 2){
                 if(!args[0].equals("on")) {
