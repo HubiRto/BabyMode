@@ -9,6 +9,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitScheduler;
 import pl.pomoku.babymode.cmds.BabyModeOnOffCommand;
 import pl.pomoku.babymode.cmds.tab_compliter.BabyModeCommandCompleter;
+import pl.pomoku.babymode.events.BlockBreakBlockEvent.DropFromNetherrack;
 import pl.pomoku.babymode.events.BlockBreakBlockEvent.DropFromStone;
 import pl.pomoku.babymode.events.BlockPlaceEvent.AutoCreatePortal;
 import pl.pomoku.babymode.events.CreatureSpawnEvent.CreatureSpawnEvent;
@@ -72,6 +73,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new pl.pomoku.babymode.events.EntityDeathEvent.WitherSkeleton(this), this);
         getServer().getPluginManager().registerEvents(new CreatureSpawnEvent(this), this);
         getServer().getPluginManager().registerEvents(new JoinOnTheEnd(this), this);
+        getServer().getPluginManager().registerEvents(new DropFromNetherrack(this), this);
     }
 
     private void Runnable() {
