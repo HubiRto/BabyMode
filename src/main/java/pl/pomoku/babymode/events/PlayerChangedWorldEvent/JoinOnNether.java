@@ -20,7 +20,7 @@ public class JoinOnNether implements Listener {
             if(plugin.getConfig().getBoolean("join_nether")) {
                 if (p.getWorld().getName().equals("world_nether")) {
                     if (!p.hasPlayedBefore()) {
-                        p.sendMessage(ChatColor.WHITE + "<" + ChatColor.GOLD + "GOD" + ChatColor.WHITE + ">" + ChatColor.GRAY + "Dalem ci maly upominek, zeby nie musial/a sie meczyc!");
+                        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.AQUA + "Baby" + ChatColor.GOLD + "Mode" + ChatColor.WHITE + "]" + ChatColor.GRAY + " Dalem ci maly upominek, zebys nie musial/a sie meczyc!");
                         p.getInventory().addItem(new ItemStack(Material.ENDER_EYE, 16));
                         p.getInventory().addItem(new ItemStack(Material.ENDER_PEARL, 16));
                         p.getInventory().addItem(new ItemStack(Material.BLAZE_ROD, 16));

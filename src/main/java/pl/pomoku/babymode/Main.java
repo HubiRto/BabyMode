@@ -1,9 +1,6 @@
 package pl.pomoku.babymode;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Effect;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -96,6 +93,7 @@ public final class Main extends JavaPlugin {
                         p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 2000, 2));
                         p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 2000, 2));
                         if (!HaveBoat(p)) {
+                            p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "Baby" + ChatColor.GOLD + "Mode" + ChatColor.DARK_GRAY + "]" + ChatColor.WHITE + " Dalem Ci maly upominek, zebys nie musial/a sie meczyc!");
                             p.getInventory().addItem(new ItemStack(Material.OAK_BOAT));
                         }
                     }
