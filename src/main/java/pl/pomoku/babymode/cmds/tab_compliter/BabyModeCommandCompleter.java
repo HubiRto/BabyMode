@@ -42,6 +42,7 @@ public class BabyModeCommandCompleter implements TabCompleter {
                 arguments.add("join_nether");
                 arguments.add("swim");
                 arguments.add("stone_drop");
+                arguments.add("netherrack_drop");
                 arguments.add("block_bad_effect");
                 arguments.add("enderman_drop");
                 arguments.add("blaze_drop");
@@ -148,6 +149,9 @@ public class BabyModeCommandCompleter implements TabCompleter {
         List<String> arguments = new ArrayList<>();
         arguments.add("on");
         arguments.add("off");
+        arguments.add("1");
+        arguments.add("2");
+        arguments.add("3");
         return arguments;
     }
 }

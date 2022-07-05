@@ -24,6 +24,7 @@ public class JoinOnTheEnd implements Listener {
             if(plugin.getConfig().getBoolean("join_the_end")) {
                 if (p.getWorld().getName().equals("world_the_end")) {
                     if (!p.hasPlayedBefore()) {
+                        p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "Baby" + ChatColor.GOLD + "Mode" + ChatColor.DARK_GRAY + "]" + ChatColor.WHITE + " Dalem Ci maly upominek, zebys nie musial/a sie meczyc!");
                         Location loc = new Location(Bukkit.getWorld("world_the_end"), 0, 68, 0);
                         p.teleport(loc);
                         p.getInventory().addItem(new ItemStack(Material.DRAGON_EGG));

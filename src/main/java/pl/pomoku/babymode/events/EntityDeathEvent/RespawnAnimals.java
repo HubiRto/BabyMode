@@ -78,6 +78,8 @@ public class RespawnAnimals implements Listener {
                         e.getEntity().getWorld().spawnEntity(e.getEntity().getLocation(), e.getEntityType());
                     } else if (e.getEntity().getType() == EntityType.BEE) {
                         e.getEntity().getWorld().spawnEntity(e.getEntity().getLocation(), e.getEntityType());
+                    }else if (e.getEntity().getType() == EntityType.STRIDER) {
+                        e.getEntity().getWorld().spawnEntity(e.getEntity().getLocation(), e.getEntityType());
                     }
                 }
             }

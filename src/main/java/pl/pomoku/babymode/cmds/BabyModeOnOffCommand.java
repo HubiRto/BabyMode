@@ -39,59 +39,69 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                     p.sendMessage(" ");
                     break;
                 case 1:
-                    if (args[0].equals("on")) {
-                        plugin.getConfig().set("babymode", true);
-                        plugin.saveConfig();
-                        p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "BabyMode");
-                    } else if (args[0].equals("off")) {
-                        plugin.getConfig().set("babymode", false);
-                        plugin.saveConfig();
-                        p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "BabyMode");
-                    }else if (args[0].equals("1")) {
-                        p.sendMessage(" ");
-                        p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f1§8/§f3 §8]§m----------§r§8[§b+§8]");
-                        p.sendMessage(" ");
-                        p.sendMessage(" §8>> §e/bm §7- pomoc.");
-                        p.sendMessage(" §8>> §e/bm §8[§aon§7/§coff§8] §7- plugin.");
-                        p.sendMessage(" §8>> §e/bm §fall §8[§aon§7/§coff§8] §7- wszystko.");
-                        p.sendMessage(" §8>> §e/bm §fkillmobs §8[§aon§7/§coff§8] §7- zabijania potworow.");
-                        p.sendMessage(" §8>> §e/bm §fextinguishing §8[§aon§7/§coff§8] §7- gaszenie.");
-                        p.sendMessage(" §8>> §e/bm §fcreate_portal §8[§aon§7/§coff§8] §7- tworzenie portalu.");
-                        p.sendMessage(" §8>> §e/bm §fauto_enchant §8[§aon§7/§coff§8] §7- automatyczne ulepszanie.");
-                        p.sendMessage(" §8>> §e/bm §fblock_explode §8[§aon§7/§coff§8] §7- blokowanie wybuchow.");
-                        p.sendMessage(" ");
-                        p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f1§8/§f3 §8]§m-----------§r§8[§b+§8]");
-                        p.sendMessage(" ");
-                    }else if (args[0].equals("2")) {
-                        p.sendMessage(" ");
-                        p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f2§8/§f3 §8]§m----------§r§8[§b+§8]");
-                        p.sendMessage(" ");
-                        p.sendMessage(" §8>> §e/bm §fauto_cook §8[§aon§7/§coff§8] §7- automatyczne przepalanie.");
-                        p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§8] §7- splaniecie itemow.");
-                        p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§8] §7- splanie itemow.");
-                        p.sendMessage(" §8>> §e/bm §fmake_obs §8[§aon§7/§coff§8] §7- tworzenie obsydianu.");
-                        p.sendMessage(" §8>> §e/bm §fmore_loot §8[§aon§7/§coff§8] §7- wiekszony loot.");
-                        p.sendMessage(" §8>> §e/bm §frespawn_animals §8[§aon§7/§coff§8] §7- odradzanie zwierzat.");
-                        p.sendMessage(" §8>> §e/bm §fblock_enderman §8[§aon§7/§coff§8] §7- blokowanie endermanow.");
-                        p.sendMessage(" §8>> §e/bm §fjoin_nether §8[§aon§7/§coff§8] §7- starpack w netherze.");
-                        p.sendMessage(" ");
-                        p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f2§8/§f3 §8]§m-----------§r§8[§b+§8]");
-                        p.sendMessage(" ");
-                    }else if (args[0].equals("3")) {
-                        p.sendMessage(" ");
-                        p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f3§8/§f3 §8]§m----------§r§8[§b+§8]");
-                        p.sendMessage(" ");
-                        p.sendMessage(" §8>> §e/bm §fswim §8[§aon§7/§coff§8] §7- pomoc przy plywaniu.");
-                        p.sendMessage(" §8>> §e/bm §fstone_drop §8[§aon§7/§coff§8] §7- drop z kamienia.");
-                        p.sendMessage(" §8>> §e/bm §fblock_bad_effect §8[§aon§7/§coff§8] §7- usuwanie zatrucia.");
-                        p.sendMessage(" §8>> §e/bm §fenderman_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu perl.");
-                        p.sendMessage(" §8>> §e/bm §fblaze_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu blaze rodow.");
-                        p.sendMessage(" §8>> §e/bm §fwither_skeleton_drop §8[§aon§7/§coff§8] §7- +drop wither czaszek.");
-                        p.sendMessage(" §8>> §e/bm §fjoin_the_end §8[§aon§7/§coff§8] §7- pomoc w endzie.");
-                        p.sendMessage(" §8>> §e/bm §fkill_ender_dragon §8[§aon§7/§coff§8] §7- zabijanie Smoka.");
-                        p.sendMessage(" ");
-                        p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f3§8/§f3 §8]§m-----------§r§8[§b+§8]");
-                        p.sendMessage(" ");
+                    switch (args[0]) {
+                        case "on":
+                            plugin.getConfig().set("babymode", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "BabyMode");
+                            break;
+                        case "off":
+                            plugin.getConfig().set("babymode", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "BabyMode");
+                            break;
+                        case "1":
+                            p.sendMessage(" ");
+                            p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f1§8/§f3 §8]§m----------§r§8[§b+§8]");
+                            p.sendMessage(" ");
+                            p.sendMessage(" §8>> §e/bm §7- pomoc.");
+                            p.sendMessage(" §8>> §e/bm §8[§aon§7/§coff§8] §7- plugin.");
+                            p.sendMessage(" §8>> §e/bm §fall §8[§aon§7/§coff§8] §7- wszystko.");
+                            p.sendMessage(" §8>> §e/bm §fkillmobs §8[§aon§7/§coff§8] §7- zabijania potworow.");
+                            p.sendMessage(" §8>> §e/bm §fextinguishing §8[§aon§7/§coff§8] §7- gaszenie.");
+                            p.sendMessage(" §8>> §e/bm §fcreate_portal §8[§aon§7/§coff§8] §7- tworzenie portalu.");
+                            p.sendMessage(" §8>> §e/bm §fauto_enchant §8[§aon§7/§coff§8] §7- automatyczne ulepszanie.");
+                            p.sendMessage(" §8>> §e/bm §fblock_explode §8[§aon§7/§coff§8] §7- blokowanie wybuchow.");
+                            p.sendMessage(" ");
+                            p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f1§8/§f3 §8]§m-----------§r§8[§b+§8]");
+                            p.sendMessage(" ");
+                            break;
+                        case "2":
+                            p.sendMessage(" ");
+                            p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f2§8/§f3 §8]§m----------§r§8[§b+§8]");
+                            p.sendMessage(" ");
+                            p.sendMessage(" §8>> §e/bm §fauto_cook §8[§aon§7/§coff§8] §7- automatyczne przepalanie.");
+                            p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§8] §7- splaniecie itemow.");
+                            p.sendMessage(" §8>> §e/bm §fblock_item_burn §8[§aon§7/§coff§8] §7- splanie itemow.");
+                            p.sendMessage(" §8>> §e/bm §fmake_obs §8[§aon§7/§coff§8] §7- tworzenie obsydianu.");
+                            p.sendMessage(" §8>> §e/bm §fmore_loot §8[§aon§7/§coff§8] §7- wiekszony loot.");
+                            p.sendMessage(" §8>> §e/bm §frespawn_animals §8[§aon§7/§coff§8] §7- odradzanie zwierzat.");
+                            p.sendMessage(" §8>> §e/bm §fblock_enderman §8[§aon§7/§coff§8] §7- blokowanie endermanow.");
+                            p.sendMessage(" §8>> §e/bm §fjoin_nether §8[§aon§7/§coff§8] §7- starpack w netherze.");
+                            p.sendMessage(" ");
+                            p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f2§8/§f3 §8]§m-----------§r§8[§b+§8]");
+                            p.sendMessage(" ");
+                            break;
+                        case "3":
+                            p.sendMessage(" ");
+                            p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f3§8/§f3 §8]§m----------§r§8[§b+§8]");
+                            p.sendMessage(" ");
+                            p.sendMessage(" §8>> §e/bm §fswim §8[§aon§7/§coff§8] §7- pomoc przy plywaniu.");
+                            p.sendMessage(" §8>> §e/bm §fstone_drop §8[§aon§7/§coff§8] §7- drop z kamienia.");
+                            p.sendMessage(" §8>> §e/bm §fnetherrack_drop §8[§aon§7/§coff§8] §7- drop z netherrack'u.");
+                            p.sendMessage(" §8>> §e/bm §fblock_bad_effect §8[§aon§7/§coff§8] §7- usuwanie zatrucia.");
+                            p.sendMessage(" §8>> §e/bm §fenderman_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu perl.");
+                            p.sendMessage(" §8>> §e/bm §fblaze_drop §8[§aon§7/§coff§8] §7- zwiekszenie dropu blaze rodow.");
+                            p.sendMessage(" §8>> §e/bm §fwither_skeleton_drop §8[§aon§7/§coff§8] §7- +drop wither czaszek.");
+                            p.sendMessage(" §8>> §e/bm §fjoin_the_end §8[§aon§7/§coff§8] §7- pomoc w endzie.");
+                            p.sendMessage(" §8>> §e/bm §fkill_ender_dragon §8[§aon§7/§coff§8] §7- zabijanie Smoka.");
+                            p.sendMessage(" ");
+                            p.sendMessage("§8[§b+§8]§m----------§r§8[ §bBABY MODE §f3§8/§f3 §8]§m-----------§r§8[§b+§8]");
+                            p.sendMessage(" ");
+                            break;
+                        default:
+                            p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "Baby" + ChatColor.GOLD + "Mode" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + "Uzycie komendy: " + ChatColor.YELLOW + "/bm <" + ChatColor.WHITE + "opcja" + ChatColor.YELLOW + ">");
+                            break;
                     }
                     break;
                 case 2:
@@ -128,6 +138,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("wither_skeleton_drop", true);
                             plugin.getConfig().set("join_the_end", true);
                             plugin.getConfig().set("kill_ender_dragon", true);
+                            plugin.getConfig().set("netherrack_drop", true);
 
                             plugin.getConfig().set("kill_mobs.mode", true);
                             plugin.getConfig().set("kill_mobs.zombie", true);
@@ -180,6 +191,7 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("join_nether", false);
                             plugin.getConfig().set("swim", false);
                             plugin.getConfig().set("stone_drop", false);
+                            plugin.getConfig().set("netherrack_drop", false);
                             plugin.getConfig().set("block_bad_effect", false);
                             plugin.getConfig().set("enderman_drop", false);
                             plugin.getConfig().set("blaze_drop", false);
@@ -423,6 +435,16 @@ public class BabyModeOnOffCommand implements CommandExecutor {
                             plugin.getConfig().set("kill_ender_dragon", false);
                             plugin.saveConfig();
                             p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Zabijanie Smoka Endu");
+                        }
+                    }else if (args[0].equals("netherrack_drop")) {
+                        if (args[1].equals("on")) {
+                            plugin.getConfig().set("netherrack_drop", true);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.GREEN + "Wlaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Drop z netherrack'u");
+                        } else if (args[1].equals("off")) {
+                            plugin.getConfig().set("netherrack_drop", false);
+                            plugin.saveConfig();
+                            p.sendMessage(ChatColor.RED + "Wylaczyles " + ChatColor.AQUA + "" + ChatColor.BOLD + "Drop z netherrack'u");
                         }
                     }
                     break;

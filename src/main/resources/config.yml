@@ -13,6 +13,7 @@ join_nether: true
 auto_cook: true
 swim: true
 stone_drop: true
+netherrack_drop: true
 block_bad_effect: true
 enderman_drop: true
 blaze_drop: true

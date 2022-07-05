@@ -16,7 +16,7 @@ public class DropFromNetherrack implements Listener {
     @EventHandler
     public void Drop(BlockBreakEvent e){
         if (plugin.getConfig().getBoolean("babymode")) {
-            if (plugin.getConfig().getBoolean("stone_drop")) {
+            if (plugin.getConfig().getBoolean("netherrack_drop")) {
                 Player p = e.getPlayer();
                 if(p.getWorld().getName().equals("world_nether")) {
                     if (e.getBlock().getType() == Material.NETHERRACK) {
